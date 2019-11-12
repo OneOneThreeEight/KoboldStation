@@ -67,15 +67,6 @@
 	var/flashfail = 0
 
 	if(iscarbon(M))
-		if (M.is_diona())
-			var/mob/living/carbon/C = M
-			var/datum/dionastats/DS = C.get_dionastats()
-			DS.stored_energy += 10
-			flick("e_flash", M.flash)
-			M.Weaken(5)
-			M.eye_blind = 5
-			return
-
 		var/safety = M:eyecheck(TRUE)
 		if(safety <= 0)
 			flick("e_flash", M.flash)

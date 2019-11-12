@@ -7,18 +7,10 @@
 	var/locked
 	var/obj/machinery/body_scanconsole/connected
 	var/list/allowed_species = list(
-		"Human",
-		"Off-Worlder Human",
-		"Skrell",
+		"Kobold",
 		"Unathi",
-		"Aut'akh Unathi",
-		"Tajara",
-		"M'sai Tajara",
-		"Zhan-Khazan Tajara",
-		"Vaurca Worker",
-		"Vaurca Warrior",
-		"Diona",
-		"Monkey"
+		"Human",
+		"Dragon"
 	)
 	name = "Body Scanner"
 	desc = "A state-of-the-art medical diagnostics machine. Guaranteed detection of all your bodily ailments or your money back!"

@@ -224,10 +224,6 @@
 			y = TRANSITIONEDGE + 1
 			x = rand(TRANSITIONEDGE + 2, world.maxx - TRANSITIONEDGE - 2)
 
-		if(istype(SSticker.mode, /datum/game_mode/nuclear)) //only really care if the game mode is nuclear
-			var/datum/game_mode/nuclear/G = SSticker.mode
-			G.check_nuke_disks()
-
 		spawn(0)
 			if(loc) loc.Entered(src)
 

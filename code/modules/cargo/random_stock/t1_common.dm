@@ -575,9 +575,6 @@ STOCK_ITEM_COMMON(mining, 2)
 	if (prob(25))
 		new /obj/item/weapon/storage/box/excavation(L)
 
-STOCK_ITEM_COMMON(paicard, 2)
-	new /obj/item/device/paicard(L)
-
 STOCK_ITEM_COMMON(phoronsheets, 2)
 	new /obj/item/stack/material/phoron(L, rand(5,50))
 

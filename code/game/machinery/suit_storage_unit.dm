@@ -348,17 +348,16 @@
 		sleep(50)
 		if(src.OCCUPANT)
 			OCCUPANT.apply_radiation(50)
-			if (!OCCUPANT.is_diona())
-				if(src.issuperUV)
-					var/burndamage = rand(28,35)
-					OCCUPANT.take_organ_damage(0,burndamage)
-					if (OCCUPANT.can_feel_pain())
-						OCCUPANT.emote("scream")
-				else
-					var/burndamage = rand(6,10)
-					OCCUPANT.take_organ_damage(0,burndamage)
-					if (OCCUPANT.can_feel_pain())
-						OCCUPANT.emote("scream")
+			if(src.issuperUV)
+				var/burndamage = rand(28,35)
+				OCCUPANT.take_organ_damage(0,burndamage)
+				if (OCCUPANT.can_feel_pain())
+					OCCUPANT.emote("scream")
+			else
+				var/burndamage = rand(6,10)
+				OCCUPANT.take_organ_damage(0,burndamage)
+				if (OCCUPANT.can_feel_pain())
+					OCCUPANT.emote("scream")
 		if(i==3) //End of the cycle
 			if(!src.issuperUV)
 				if(src.HELMET)
@@ -609,7 +608,7 @@
 	//Departments that the cycler can paint suits to look like.
 	var/list/departments = list("Engineering","Mining","Medical","Security","Atmos")
 	//Species that the suits can be configured to fit.
-	var/list/species = list("Human","Skrell","Unathi","Tajara", "Vaurca", "Machine")
+	var/list/species = list("Human","Kobold","Unathi","Machine")
 
 	var/target_department
 	var/target_species
@@ -693,7 +692,7 @@
 	model_text = "Wizardry"
 	req_access = null
 	departments = list("Wizardry")
-	species = list("Human","Tajara","Skrell","Unathi", "Machine")
+	species = list("Human","Kobold","Unathi", "Machine")
 	can_repair = 1
 
 /obj/machinery/suit_cycler/hos
@@ -701,7 +700,7 @@
 	model_text = "Head of Security"
 	req_access = list(access_hos)
 	departments = list("Head of Security")
-	species = list("Human","Tajara","Skrell","Unathi", "Machine")
+	species = list("Human","Kobold","Unathi", "Machine")
 	can_repair = 1
 
 /obj/machinery/suit_cycler/captain
@@ -709,7 +708,7 @@
 	model_text = "Captain"
 	req_access = list(access_captain)
 	departments = list("Captain")
-	species = list("Human","Tajara","Skrell","Unathi", "Machine")
+	species = list("Human","Kobold","Unathi", "Machine")
 	can_repair = 1
 
 /obj/machinery/suit_cycler/attack_ai(mob/user as mob)

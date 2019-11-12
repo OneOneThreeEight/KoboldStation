@@ -126,12 +126,8 @@
 		if(!stored_item)
 			to_chat(user,"<span class='notice'>There is nothing hidden in [src].</span>")
 		else
-			if(istype(stored_item, /obj/item/device/paicard))
-				stored_item.forceMove(src.loc)
-				to_chat(user,"<span class='notice'>You reveal \the [stored_item] from [src].</span>")
-			else
-				user.put_in_hands(stored_item)
-				to_chat(user,"<span class='notice'>You take \the [stored_item] from [src].</span>")
+			user.put_in_hands(stored_item)
+			to_chat(user,"<span class='notice'>You take \the [stored_item] from [src].</span>")
 			stored_item = null
 
 /obj/structure/flora/pottedplant/bullet_act(var/obj/item/projectile/Proj)

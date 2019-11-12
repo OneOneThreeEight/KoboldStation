@@ -8,7 +8,7 @@
 
 	bodytype = "Golem"
 
-	language = "Ceti Basic"
+	language = LANGUAGE_KOBOLD
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch)
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_EMBED
 	spawn_flags = IS_RESTRICTED

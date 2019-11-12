@@ -505,12 +505,6 @@
 	hidden = 1
 	category = "Engineering"
 
-/datum/autolathe/recipe/electropack
-	name = "electropack"
-	path = /obj/item/device/radio/electropack
-	hidden = 1
-	category = "Devices and Components"
-
 /datum/autolathe/recipe/trap
 	name = "mechanical trap"
 	path = /obj/item/weapon/trap

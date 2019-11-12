@@ -132,17 +132,6 @@
 		)
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick()
-	if (istype(usr, /mob/living/carbon/alien/diona))//A diona alt+clicking feeds the plant
-
-		if (closed_system)
-			to_chat(usr, "The lid is closed, you don't have hands to open it and reach the plants inside!")
-			return
-		var/mob/living/carbon/alien/diona/nymph = usr
-		if(nymph.nutrition > 100 && nutrilevel < 10)
-			nymph.adjustNutritionLoss((10-nutrilevel)*5)
-			nutrilevel = 10
-			nymph.visible_message("<font color='blue'><b>[nymph]</b> secretes a trickle of green liquid, refilling [src].</font>","<font color='blue'>You secrete a trickle of green liquid, refilling [src].</font>")
-		return//Nymphs cant open and close lids
 	if(mechanical && !usr.incapacitated() && Adjacent(usr))
 		close_lid(usr)
 		return 1
@@ -160,34 +149,6 @@
 	if(response == "Yes")
 		harvest()
 	return
-
-/obj/machinery/portable_atmospherics/hydroponics/attack_generic(var/mob/user)
-
-	// Why did I ever think this was a good idea. TODO: move this onto the nymph mob.
-	if(istype(user,/mob/living/carbon/alien/diona))
-		var/mob/living/carbon/alien/diona/nymph = user
-
-		if (closed_system)
-			to_chat(user, "The lid is closed, you don't have hands to open it and reach the plants inside!")
-			return
-		if(nymph.stat == DEAD || nymph.paralysis || nymph.weakened || nymph.stunned || nymph.restrained())
-			return
-		if(weedlevel > 0)
-			nymph.ingested.add_reagent("nutriment", weedlevel/6)
-			weedlevel = 0
-			nymph.visible_message("<font color='blue'><b>[nymph]</b> roots through [src], ripping out weeds and eating them noisily.</font>","<font color='blue'>You root through [src], ripping out weeds and eating them noisily.</font>")
-			return
-		if (dead)//Let nymphs eat dead plants
-			nymph.ingested.add_reagent("nutriment", 1)
-			nymph.visible_message("<font color='blue'><b>[nymph]</b> rips out the dead plants from [src], and loudly munches them.</font>","<font color='blue'>You root out the dead plants in [src], eating them with loud chewing sounds.</font>")
-			remove_dead(user)
-			return
-		if (harvest)
-			harvest(user)
-			return
-		else
-			nymph.visible_message("<font color='blue'><b>[nymph]</b> rolls around in [src] for a bit.</font>","<font color='blue'>You roll around in [src] for a bit.</font>")
-		return
 
 /obj/machinery/portable_atmospherics/hydroponics/New()
 	..()

@@ -34,8 +34,8 @@ datum/preferences
 	//character preferences
 	var/real_name						//our character's name
 	var/can_edit_name = 1				//Whether or not a character's name can be edited. Used with SQL saving.
-	var/gender = MALE					//gender of character (well duh)
-	var/age = 30						//age of character
+	var/gender = FEMALE					//gender of character (well duh)
+	var/age = 20						//age of character
 	var/spawnpoint = "Arrivals Shuttle" //where this character will spawn (0-2).
 	var/b_type = "A+"					//blood type (not-chooseable)
 	var/underwear						//underwear type
@@ -58,11 +58,11 @@ datum/preferences
 	var/r_skin = 37						//Skin color
 	var/g_skin = 3						//Skin color
 	var/b_skin = 2						//Skin color
-	var/eyes_colour = "#000000"			//Eye colour hex value, for SQL loading
-	var/r_eyes = 0						//Eye color
-	var/g_eyes = 0						//Eye color
+	var/eyes_colour = "#402000"			//Eye colour hex value, for SQL loading
+	var/r_eyes = 64						//Eye color
+	var/g_eyes = 32						//Eye color
 	var/b_eyes = 0						//Eye color
-	var/species = "Human"               //Species datum to use.
+	var/species = "Kobold"              //Species datum to use.
 	var/species_preview                 //Used for the species selection window.
 	var/list/alternate_languages = list() //Secondary language(s)
 	var/list/language_prefixes = list() // Language prefix keys
@@ -510,13 +510,11 @@ datum/preferences
 		g_eyes = 0
 		b_eyes = 0
 
-		species = "Human"
+		species = "Kobold"
 		home_system = "Unset"
 		citizenship = "None"
 		faction = "None"
 		religion = "None"
-
-		species = "Human"
 
 		job_civilian_high = 0
 		job_civilian_med = 0

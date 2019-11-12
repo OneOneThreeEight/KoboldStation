@@ -141,12 +141,6 @@
 		to_chat(M, "<span class='danger'>Your fingers are much too large for the trigger guard!</span>")
 		return 0
 
-	if(ishuman(M))
-		var/mob/living/carbon/human/A = M
-		if(A.martial_art && A.martial_art.no_guns)
-			to_chat(A, "<span class='warning'>[A.martial_art.no_guns_message]</span>")
-			return 0
-
 	if((M.is_clumsy()) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
 		if(P)
@@ -582,11 +576,6 @@
 		to_chat(user, "<span class='warning'>You need to be holding the [name] in your active hand</span>")
 		return
 	if(!istype(user, /mob/living/carbon/human))
-		to_chat(user, "<span class='warning'>It's too heavy for you to stabilize properly.</span>")
-		return
-
-	var/mob/living/carbon/human/M = user
-	if(istype(M.species, /datum/species/monkey))
 		to_chat(user, "<span class='warning'>It's too heavy for you to stabilize properly.</span>")
 		return
 

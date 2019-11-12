@@ -205,10 +205,6 @@
 		cell.forceMove(loc)
 		cell = null
 
-	// Malf AI, removes the APC from AI's hacked APCs list.
-	if((hacker) && (hacker.hacked_apcs) && (src in hacker.hacked_apcs))
-		hacker.hacked_apcs -= src
-
 	return ..()
 
 /obj/machinery/power/apc/proc/energy_fail(var/duration)
@@ -382,7 +378,7 @@
 			update_state |= UPDATE_OPENED1
 		if(opened==2)
 			update_state |= UPDATE_OPENED2
-	else if (emagged || failure_timer || (hacker && (hacker.system_override || prob(20))))
+	else if (emagged || failure_timer || prob(20))
 		update_state |= UPDATE_BLUESCREEN
 	else if(wiresexposed)
 		update_state |= UPDATE_WIREEXP
@@ -649,10 +645,6 @@
 				"You replace the damaged APC frame with new one.")
 			qdel(W)
 			stat &= ~BROKEN
-			// Malf AI, removes the APC from AI's hacked APCs list.
-			if(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs))
-				hacker.hacked_apcs -= src
-				hacker = null
 			if (opened==2)
 				opened = 1
 			update_icon()
@@ -670,14 +662,8 @@
 					to_chat(user, "<span class='notice'>Applied default software. Restarting APC...</span>")
 					if(do_after(user, 10/W.toolspeed SECONDS, act_target = src))
 						to_chat(user, "<span class='notice'>APC Reset. Fixes applied.</span>")
-						if(hacker)
-							hacker.hacked_apcs -= src
-							hacker = null
-							update_icon()
 						if(emagged)
 							emagged = 0
-						if(infected)
-							infected = 0
 			else
 				to_chat(user, "<span class='notice'>There has been a connection issue.</span>")
 				return
@@ -1378,16 +1364,6 @@ obj/machinery/power/apc/proc/autoset(var/val, var/on)
 		return 1
 	else
 		return 0
-
-// Malfunction: Transfers APC under AI's control
-/obj/machinery/power/apc/proc/ai_hack(var/mob/living/silicon/ai/A = null)
-	if(!A || !A.hacked_apcs || hacker || aidisabled || A.stat == DEAD)
-		return 0
-	src.hacker = A
-	A.hacked_apcs += src
-	locked = 1
-	update_icon()
-	return 1
 
 /obj/machinery/power/apc/proc/update_time()
 

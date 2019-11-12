@@ -462,7 +462,7 @@
 	if(captured)
 		pass_without_trace(usr) // It's full
 
-	if((usr.isMonkey() && (/mob/living/carbon/human/monkey in allowed_mobs)) || is_type_in_list(usr, allowed_mobs)) // Because monkeys can be of type of just human.
+	if(is_type_in_list(usr, allowed_mobs))
 		pass_without_trace(usr, 50)
 		return
 
@@ -519,8 +519,8 @@
 /obj/item/weapon/trap/animal/medium/Initialize()
 	. = ..()
 	allowed_mobs = list(
-						/mob/living/simple_animal/cat, /mob/living/simple_animal/corgi, /mob/living/simple_animal/hostile/diyaab, /mob/living/carbon/human/monkey, /mob/living/simple_animal/penguin, /mob/living/simple_animal/crab,
-						/mob/living/simple_animal/chicken, /mob/living/simple_animal/yithian, /mob/living/carbon/alien/diona, /mob/living/silicon/robot/drone, /mob/living/silicon/pai,
+						/mob/living/simple_animal/cat, /mob/living/simple_animal/corgi, /mob/living/simple_animal/hostile/diyaab, /mob/living/simple_animal/penguin, /mob/living/simple_animal/crab,
+						/mob/living/simple_animal/chicken, /mob/living/simple_animal/yithian, /mob/living/silicon/robot/drone,
 						/mob/living/simple_animal/spiderbot, /mob/living/simple_animal/hostile/tree)
 
 /obj/item/weapon/trap/animal/large

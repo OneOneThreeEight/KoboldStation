@@ -386,7 +386,6 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	data["mode"] = mode					// The current view
 	data["scanmode"] = scanmode				// Scanners
 	data["fon"] = fon					// Flashlight on?
-	data["pai"] = (isnull(pai) ? 0 : 1)			// pAI inserted?
 	data["note"] = note					// current pda notes
 	data["message_silent"] = message_silent					// does the pda make noise when it receives a message?
 	data["news_silent"] = news_silent					// does the pda make noise when it receives news?
@@ -868,22 +867,6 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				U.unset_machine()
 				ui.close()
 				return 0
-
-//pAI FUNCTIONS===================================
-		if("pai")
-			if(pai)
-				if(pai.loc != src)
-					pai = null
-				else
-					switch(href_list["option"])
-						if("1")		// Configure pAI device
-							pai.attack_self(U)
-						if("2")		// Eject pAI device
-							var/turf/T = get_turf_or_move(src.loc)
-							if(T)
-								pai.forceMove(T)
-								pai = null
-
 		else
 			mode = text2num(href_list["choice"])
 			if(cartridge)
@@ -1288,12 +1271,6 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					updateSelfDialog()//Update self dialog on success.
 			return	//Return in case of failed check or when successful.
 		updateSelfDialog()//For the non-input related code.
-	else if(istype(C, /obj/item/device/paicard) && !src.pai)
-		user.drop_from_inventory(C,src)
-		pai = C
-		pai.update_location()//This notifies the pAI that they've been slotted into a PDA
-		to_chat(user, "<span class='notice'>You slot \the [C] into [src].</span>")
-		SSnanoui.update_uis(src) // update all UIs attached to src
 	else if(C.ispen())
 		if(pen)
 			to_chat(user, "<span class='notice'>There is already a pen in \the [src].</span>")

@@ -682,23 +682,13 @@
 	Debug("LS/([H]): Completed, spawning at area [H.loc.loc].")
 
 /datum/controller/subsystem/jobs/proc/DespawnMob(mob/living/carbon/human/H)
-	//Update any existing objectives involving this mob.
-	for(var/datum/objective/O in all_objectives)
-		// We don't want revs to get objectives that aren't for heads of staff. Letting
-		// them win or lose based on cryo is silly so we remove the objective.
-		if(O.target == H.mind)
-			if(O.owner && O.owner.current)
-				to_chat(O.owner.current, "<span class='warning'>You get the feeling your target is no longer within your reach...</span>")
-			qdel(O)
-
 	//Handle job slot/tater cleanup.
 	if (H.mind)
 		var/job = H.mind.assigned_role
 
 		FreeRole(job)
 
-		if(H.mind.objectives.len)
-			qdel(H.mind.objectives)
+		if(H.mind.special_role)
 			H.mind.special_role = null
 
 	// Delete them from datacore.

@@ -44,8 +44,8 @@
 
 /mob/living/simple_animal/spiderbot/Initialize()
 	. = ..()
-	add_language("Ceti Basic")
-	default_language = all_languages["Ceti Basic"]
+	add_language(LANGUAGE_KOBOLD)
+	default_language = all_languages[LANGUAGE_KOBOLD]
 	verbs |= /mob/living/proc/ventcrawl
 	verbs |= /mob/living/proc/hide
 

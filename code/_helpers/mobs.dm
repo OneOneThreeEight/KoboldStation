@@ -26,7 +26,7 @@
 
 		. += AM.get_mob()
 
-proc/random_hair_style(gender, species = "Human")
+proc/random_hair_style(gender, species = "Kobold")
 	var/h_style = "Bald"
 
 	var/list/valid_hairstyles = list()
@@ -45,7 +45,7 @@ proc/random_hair_style(gender, species = "Human")
 
 	return h_style
 
-proc/random_facial_hair_style(gender, species = "Human")
+proc/random_facial_hair_style(gender, species = "Kobold")
 	var/f_style = "Shaved"
 
 	var/list/valid_facialhairstyles = list()
@@ -65,14 +65,14 @@ proc/random_facial_hair_style(gender, species = "Human")
 
 		return f_style
 
-proc/sanitize_name(name, species = "Human")
+proc/sanitize_name(name, species = "Kobold")
 	var/datum/species/current_species
 	if(species)
 		current_species = all_species[species]
 
 	return current_species ? current_species.sanitize_name(name) : sanitizeName(name)
 
-proc/random_name(gender, species = "Human")
+proc/random_name(gender, species = "Kobold")
 
 	var/datum/species/current_species
 	if(species)

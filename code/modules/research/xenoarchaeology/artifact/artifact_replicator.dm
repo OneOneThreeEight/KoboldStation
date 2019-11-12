@@ -29,7 +29,6 @@
 	/obj/structure/closet/acloset,\
 	/mob/living/simple_animal/hostile/mimic,\
 	/mob/living/simple_animal/hostile/viscerator,\
-	/mob/living/simple_animal/hostile/hivebot,\
 	/obj/item/device/analyzer,\
 	/obj/item/device/camera,\
 	/obj/item/device/flash,\
@@ -37,7 +36,6 @@
 	/obj/item/device/healthanalyzer,\
 	/obj/item/device/breath_analyzer,\
 	/obj/item/device/multitool,\
-	/obj/item/device/paicard,\
 	/obj/item/device/radio,\
 	/obj/item/device/radio/headset,\
 	/obj/item/device/radio/beacon,\

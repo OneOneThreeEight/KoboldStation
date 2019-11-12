@@ -461,7 +461,7 @@ About the new airlock wires panel:
 					return
 			else /*if(src.justzap)*/
 				return
-		else if(user.hallucination > 50 && prob(10) && src.operating == 0 && !user.is_diona() && !user.isSynthetic())
+		else if(user.hallucination > 50 && prob(10) && src.operating == 0 && !user.isSynthetic())
 			to_chat(user, "<span class='danger'>You feel a powerful shock course through your body!</span>")
 			user.halloss += 10
 			user.stunned += 10
@@ -1067,11 +1067,6 @@ About the new airlock wires panel:
 		var/obj/item/weapon/pai_cable/cable = C
 		cable.plugin(src, user)
 	else if(!repairing && C.iscrowbar())
-		if(istype(C, /obj/item/weapon/melee/arm_blade))
-			if(!arePowerSystemsOn()) //if this check isn't done and empty, the armblade will never be used to hit the airlock
-			else if(!(stat & BROKEN))
-				..()
-				return
 		if(src.p_open && (operating < 0 || (!operating && welded && !src.arePowerSystemsOn() && density && !src.locked)))
 			playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
 			user.visible_message("[user] removes the electronics from the airlock assembly.", "You start to remove electronics from the airlock assembly.")

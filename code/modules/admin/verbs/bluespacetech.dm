@@ -91,30 +91,14 @@
 	//Add the rest of the languages
 	//Because universal speak doesn't work right.
 
-	bst.add_language(LANGUAGE_TCB)
-	bst.add_language(LANGUAGE_GUTTER)
+	bst.add_language(LANGUAGE_KOBOLD)
+	bst.add_language(LANGUAGE_DRAGON)
+	bst.add_language(LANGUAGE_LIZARD)
 	bst.add_language(LANGUAGE_SIGN)
-	bst.add_language(LANGUAGE_TRADEBAND)
-	// Unathi languages
-	bst.add_language(LANGUAGE_UNATHI)
-	bst.add_language(LANGUAGE_AZAZIBA)
-	// Tajara languages
-	bst.add_language(LANGUAGE_SIIK_MAAS)
-	bst.add_language(LANGUAGE_SIIK_TAJR)
-	bst.add_language(LANGUAGE_SIGN_TAJARA)
-	// Other station species' languages
-	bst.add_language(LANGUAGE_SKRELLIAN)
-	bst.add_language(LANGUAGE_SOL_COMMON)
-	bst.add_language(LANGUAGE_ROOTSONG)
-	bst.add_language(LANGUAGE_VAURCA)
 	// Synthetics
 	bst.add_language(LANGUAGE_ROBOT)
 	bst.add_language(LANGUAGE_DRONE)
 	bst.add_language(LANGUAGE_EAL)
-	// Antagonist languages
-	bst.add_language(LANGUAGE_VOX)
-	bst.add_language(LANGUAGE_CHANGELING)
-	bst.add_language(LANGUAGE_BORER)
 
 	addtimer(CALLBACK(src, .proc/bst_post_spawn, bst), 5)
 	addtimer(CALLBACK(src, .proc/bst_spawn_cooldown), 5 SECONDS)

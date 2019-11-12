@@ -39,8 +39,6 @@
 	data["has_ai"] = carded_ai != null
 	if(carded_ai)
 		data["name"] = carded_ai.name
-		data["hardware_integrity"] = carded_ai.hardware_integrity()
-		data["backup_capacitor"] = carded_ai.backup_capacitor()
 		data["radio"] = !carded_ai.aiRadio.disabledAi
 		data["wireless"] = !carded_ai.control_disabled
 		data["operational"] = carded_ai.stat != DEAD
@@ -108,10 +106,6 @@
 
 	if(carded_ai)
 		to_chat(user, "<span class='danger'>Transfer failed:</span> Existing AI found on remote terminal. Remove existing AI to install a new one.")
-		return 0
-
-	if(ai.is_malf() && ai.stat != DEAD)
-		to_chat(user, "<span class='danger'>ERROR:</span> Remote transfer interface disabled.")
 		return 0
 
 	if(istype(ai.loc, /turf/))

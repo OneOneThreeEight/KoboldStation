@@ -110,14 +110,6 @@
 	build_path = /obj/item/weapon/aiModule/tyrant
 	sort_string = "XACAD"
 
-/datum/design/item/paicard
-	name = "'pAI', personal artificial intelligence device"
-	id = "paicard"
-	req_tech = list(TECH_DATA = 2)
-	materials = list("glass" = 500, DEFAULT_WALL_MATERIAL = 500)
-	build_path = /obj/item/device/paicard
-	sort_string = "VABAI"
-
 /datum/design/item/intellicard
 	name = "'intelliCard', AI preservation and transportation system"
 	desc = "Allows for the construction of an intelliCard."

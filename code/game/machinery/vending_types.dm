@@ -926,9 +926,6 @@
 	contraband = list(
 		/obj/item/device/flash = 2
 	)
-	premium = list(
-		/obj/item/device/paicard = 2
-	)
 	//everything after the power cell had no amounts, I improvised.  -Sayu
 	restock_blocked_items = list(
 		/obj/item/stack/cable_coil,

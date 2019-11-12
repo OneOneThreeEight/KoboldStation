@@ -15,12 +15,6 @@ emp_act
 	if(species_check)
 		return species_check
 
-	if(!is_physically_disabled())
-		if(martial_art && martial_art.deflection_chance)
-			if(prob(martial_art.deflection_chance))
-				src.visible_message("<span class='danger'>\The [src] deflects \the [P]!</span>")
-				return 0
-
 	def_zone = check_zone(def_zone)
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.

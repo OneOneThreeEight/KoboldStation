@@ -174,10 +174,6 @@ var/list/floor_light_cache = list()
 		on = 0
 	return ..()
 
-/obj/machinery/floor_light/cultify()
-	default_light_colour = "#FF0000"
-	update_brightness()
-
 /obj/machinery/floor_light/dance
 	name = "dance floor"
 	on_state = "light_on-dancefloor_A"

@@ -37,10 +37,10 @@
 /mob/living/silicon/Initialize()
 	silicon_mob_list |= src
 	. = ..()
-	add_language("Ceti Basic")
+	add_language(LANGUAGE_KOBOLD)
 	init_id()
 
-	var/datum/language/L = locate(/datum/language/common) in languages
+	var/datum/language/L = locate(/datum/language/kobold) in languages
 	default_language = L
 
 	init_subsystems()
@@ -355,12 +355,6 @@
 
 /mob/living/silicon/proc/is_traitor()
 	return mind && (mind in traitors.current_antagonists)
-
-/mob/living/silicon/proc/is_malf()
-	return mind && (mind in malf.current_antagonists)
-
-/mob/living/silicon/proc/is_malf_or_traitor()
-	return is_traitor() || is_malf()
 
 /mob/living/silicon/adjustEarDamage()
 	return

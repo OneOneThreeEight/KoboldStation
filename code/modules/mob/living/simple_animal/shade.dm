@@ -31,9 +31,6 @@
 	appearance_flags = NO_CLIENT_COLOR
 	var/obj/item/residue = /obj/item/weapon/ectoplasm
 
-/mob/living/simple_animal/shade/cultify()
-	return
-
 /mob/living/simple_animal/shade/death()
 	. = ..()
 	visible_message("<span class='warning'>[src] lets out a contented sigh as their form unwinds.</span>")
@@ -331,7 +328,7 @@
 
 	var/list/mob/living/carbon/human/choices = list()
 	for(var/mob/living/carbon/human/H in view(1, src))
-		if(!isSynthetic(H) && !isvaurca(H) && !H.is_diona())
+		if(!isSynthetic(H))
 			choices += H
 
 	if(!choices.len)

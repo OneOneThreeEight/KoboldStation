@@ -21,7 +21,7 @@
 
 /mob/living/simple_animal/familiar/Initialize()
 	. = ..()
-	add_language(LANGUAGE_TCB)
+	add_language(LANGUAGE_KOBOLD)
 	for(var/spell in wizardy_spells)
 		src.add_spell(new spell, "const_spell_ready")
 
@@ -209,6 +209,6 @@
 	. = ..()
 	add_spell(new /spell/targeted/heal_target, "const_spell_ready")
 	add_spell(new /spell/targeted/heal_target/area, "const_spell_ready")
-	add_language(LANGUAGE_TCB)
+	add_language(LANGUAGE_KOBOLD)
 	name = initial(name)
 	desc = initial(desc)

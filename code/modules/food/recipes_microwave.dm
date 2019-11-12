@@ -662,27 +662,6 @@
 	reagents = list("sugar" = 5, "frostoil" = 5)
 	result = /obj/item/weapon/reagent_containers/food/snacks/mint
 
-
-
-
-/datum/recipe/friedkois
-	fruit = list("koisspore" = 1)
-	result = /obj/item/weapon/reagent_containers/food/snacks/friedkois
-
-/datum/recipe/koiswaffles
-	items = list(/obj/item/weapon/reagent_containers/food/snacks/soup/kois)
-	result = /obj/item/weapon/reagent_containers/food/snacks/koiswaffles
-
-/datum/recipe/koisjelly
-	fruit = list("koisspore" = 2)
-	items = list(/obj/item/weapon/reagent_containers/food/snacks/soup/kois)
-	result = /obj/item/weapon/reagent_containers/food/snacks/koisjelly
-
-/datum/recipe/neuralbroke
-	items = list(/obj/item/organ/vaurca/neuralsocket)
-	result = /obj/item/weapon/neuralbroke
-
-
 /////////////////////////////////////////////////////////////
 //Synnono Meme Foods
 //

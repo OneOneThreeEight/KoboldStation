@@ -537,8 +537,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 				if(ishuman(M) || isbrain(M))
 					race = "Sapient Species"
 					log.parameters["intelligible"] = 1
-				else if(M.isMonkey())
-					race = "Monkey"
 				else if(issilicon(M))
 					race = "Artificial Life"
 					log.parameters["intelligible"] = 1

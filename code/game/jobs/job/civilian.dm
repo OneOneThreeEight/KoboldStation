@@ -96,9 +96,7 @@
 
 /datum/outfit/job/hydro/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	if(istajara(H))
-		H.equip_or_collect(new /obj/item/clothing/gloves/botanic_leather/tajara(H), slot_gloves)
-	else if(isunathi(H))
+	if(isunathi(H))
 		H.equip_or_collect(new /obj/item/clothing/gloves/botanic_leather/unathi(H), slot_gloves)
 	else
 		H.equip_or_collect(new /obj/item/clothing/gloves/botanic_leather(H), slot_gloves)

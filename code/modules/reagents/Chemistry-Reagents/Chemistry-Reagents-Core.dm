@@ -2,7 +2,7 @@
 	data = list(
 		"donor" = null,
 		"viruses" = null,
-		"species" = "Human",
+		"species" = "Kobold",
 		"blood_DNA" = null,
 		"blood_type" = null,
 		"blood_colour" = "#A10808",

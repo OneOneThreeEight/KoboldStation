@@ -80,7 +80,7 @@
 		max_damage = min_broken_damage * 2
 	if(istype(holder))
 		src.owner = holder
-		species = all_species["Human"]
+		species = all_species["Kobold"]
 		if(holder.dna)
 			dna = holder.dna.Clone()
 			species = all_species[dna.species]

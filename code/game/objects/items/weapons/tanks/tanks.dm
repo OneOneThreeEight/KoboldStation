@@ -69,7 +69,7 @@
 
 /obj/item/weapon/tank/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
-	if (istype(src.loc, /obj/item/assembly))
+	if (istype(src.loc, /obj/item/device/assembly))
 		icon = src.loc
 
 	if ((istype(W, /obj/item/device/analyzer)) && get_dist(user, src) <= 1)

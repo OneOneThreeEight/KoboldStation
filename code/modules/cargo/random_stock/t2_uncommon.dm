@@ -339,15 +339,6 @@ STOCK_ITEM_UNCOMMON(laserscalpel, 1.3)
 	var/type = pickweight(lasers)
 	new type(L)
 
-STOCK_ITEM_UNCOMMON(electropack, 1)
-	new /obj/item/device/radio/electropack(L)
-
-	if (istype(L, /obj/structure/closet/crate) && prob(40))
-		var/obj/structure/closet/crate/cr = L
-		cr.rigged = TRUE
-		//Boobytrapped crate, will electrocute when you attempt to open it
-		//Can be disarmed with wirecutters or ignored with insulated gloves
-
 STOCK_ITEM_UNCOMMON(monkeyhide, 0.5)
 	new /obj/item/stack/material/animalhide/monkey(L, 50)
 

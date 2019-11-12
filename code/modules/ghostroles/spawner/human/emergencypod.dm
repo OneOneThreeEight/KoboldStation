@@ -10,7 +10,7 @@
 
 	//Vars related to human mobs
 	outfit = /datum/outfit/admin/random/visitor
-	possible_species = list("Human","Skrell","Tajara","Unathi")
+	possible_species = list("Human","Kobold","Unathi")
 	possible_genders = list(MALE,FEMALE)
 	allow_appearance_change = APPEARANCE_PLASTICSURGERY
 

@@ -615,7 +615,7 @@
 			src.animate_tail_stop()
 
 		if("beep")
-			if (!isipc(src))
+			if (!isSynthetic())
 				to_chat(src, span("notice", "You're not a Machine!"))
 			else
 				var/M = null
@@ -635,7 +635,7 @@
 				m_type = 1
 
 		if("ping")
-			if (!isipc(src))
+			if (!isSynthetic())
 				to_chat(src, span("notice", "You're not a machine!"))
 			else
 				var/M = null
@@ -655,7 +655,7 @@
 				m_type = 1
 
 		if("buzz")
-			if (!isipc(src))
+			if (!isSynthetic())
 				to_chat(src, span("notice", "You're not a machine!"))
 			else
 				var/M = null
@@ -673,32 +673,6 @@
 					message = "buzzes."
 				playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 0)
 				m_type = 1
-
-		if("chirp")
-			if(!is_diona(src))
-				to_chat(src, "<span class='warning'>You are not a Diona!</span>")
-				return
-			message = "chirps!"
-			playsound(src.loc, 'sound/misc/nymphchirp.ogg', 50, 0)
-			m_type = 2
-
-		if("chirp_song")
-			if(!is_diona(src))
-				to_chat(src, "<span class='warning'>You are not a Diona!</span>")
-				return
-			message = "chirps a song!"
-			for(var/mob/living/carbon/alien/diona/D in src)
-				playsound(src.loc, 'sound/misc/nymphchirp.ogg', pick(list(5, 10, 20, 40)), 0)
-				sleep(pick(list(5, 10, 15, 20)))
-			m_type = 2
-
-		if("chitter")
-			if(!isvaurca(src))
-				to_chat(src, "<span class='warning'>You don't have the means to do this!</span>")
-				return
-			message = "chitters."
-			playsound(src.loc, pick('sound/misc/zapsplat/chitter1.ogg', 'sound/misc/zapsplat/chitter2.ogg', 'sound/misc/zapsplat/chitter3.ogg'), 50, 0)
-			m_type = 2
 
 		if("vomit")
 			if (!check_has_mouth(src))
