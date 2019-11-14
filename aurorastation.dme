@@ -2030,7 +2030,6 @@
 #include "code\modules\random_map\noise\magma.dm"
 #include "code\modules\random_map\noise\noise.dm"
 #include "code\modules\random_map\noise\ore.dm"
-#include "code\modules\random_map\noise\tundra.dm"
 #include "code\modules\reagents\Chemistry-Colours.dm"
 #include "code\modules\reagents\Chemistry-Holder.dm"
 #include "code\modules\reagents\Chemistry-Logging.dm"
@@ -2394,6 +2393,8 @@
 #include "maps\exodus\code\exodus_holodeck.dm"
 #include "maps\exodus\code\exodus_shuttles.dm"
 #include "maps\exodus\code\exodus_unittest.dm"
+#include "maps\kobold\code\kobold.dm"
+#include "maps\kobold\code\kobold_turfs.dm"
 #include "maps\runtime\code\runtime.dm"
 #include "maps\runtime\code\runtime_unittest.dm"
 // END_INCLUDE
