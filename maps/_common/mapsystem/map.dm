@@ -9,7 +9,6 @@
 	var/list/player_levels = list()  // Z-levels a character can typically reach
 	var/list/sealed_levels = list()  // Z-levels that don't allow random transit at edge
 	var/list/restricted_levels = list()  // Z-levels that dont allow ghosts to randomly move around
-	var/list/persist_levels = list() // Z-levels that are persistent.
 
 	var/list/map_levels              // Z-levels available to various consoles, such as the crew monitor. Defaults to station_levels if unset.
 
@@ -67,8 +66,6 @@
 	var/list/lobby_screens = list("title") // The list of lobby screen to pick() from. If left unset the first icon state is always selected.
 
 	var/has_space_ruins = FALSE	//if this map picks and creates a space ruin
-
-	var/persist = FALSE // if this map has persistence mechanics
 
 /datum/map/New()
 	if(!map_levels)
