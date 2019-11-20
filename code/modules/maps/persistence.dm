@@ -1,5 +1,6 @@
 /hook/roundend/proc/savemap()
 	if(!current_map || !current_map.persist || !LAZYLEN(current_map.persist_levels))
+		world.log << "Not saving [current_map]!"
 		return 0
 	. = 0
 

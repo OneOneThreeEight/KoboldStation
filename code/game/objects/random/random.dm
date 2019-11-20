@@ -464,7 +464,6 @@
 		/obj/machinery/vending/hydroseeds = 1,
 		/obj/machinery/vending/magivend = 0.5,	//The things it dispenses are just costumes to non-wizards
 		/obj/machinery/vending/dinnerware = 1,
-		/obj/machinery/vending/sovietsoda = 2,
 		/obj/machinery/vending/tool = 1,
 		/obj/machinery/vending/engivend = 0.6,
 		/obj/machinery/vending/engineering = 1,

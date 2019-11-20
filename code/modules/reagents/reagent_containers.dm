@@ -53,6 +53,9 @@
 		src.verbs -= /obj/item/weapon/reagent_containers/verb/set_APTFT
 	create_reagents(volume)
 
+/obj/item/weapon/reagent_containers/Write()
+	
+
 /obj/item/weapon/reagent_containers/attack_self(mob/user as mob)
 	return
 

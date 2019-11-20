@@ -22,14 +22,14 @@
 	var/sound_time = TRUE
 
 	var/turns_per_move = 1
-	var/turns_since_move = 0
+	var/tmp/turns_since_move = 0
 	universal_speak = 0		//No, just no.
 	var/meat_amount = 0
 	var/meat_type
 	var/stop_automated_movement = 0 //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = 1	// Does the mob wander around when idle?
 	var/stop_automated_movement_when_pulled = 1 //When set to 1 this stops the animal from moving when someone is pulling it.
-	var/atom/movement_target = null//Thing we're moving towards
+	var/tmp/atom/movement_target = null//Thing we're moving towards
 	var/turns_since_scan = 0
 
 	//Interaction
@@ -107,10 +107,10 @@
 	var/flying = FALSE //if they can fly, which stops them from falling down and allows z-space travel
 
 	var/has_udder = FALSE
-	var/datum/reagents/udder = null
+	var/tmp/datum/reagents/udder = null
 	var/milk_type = "milk"
 
-	var/list/butchering_products	//if anything else is created when butchering this creature, like bones and leather
+	var/tmp/list/butchering_products	//if anything else is created when butchering this creature, like bones and leather
 
 /mob/living/simple_animal/proc/beg(var/atom/thing, var/atom/holder)
 	visible_emote("gazes longingly at [holder]'s [thing]",0)

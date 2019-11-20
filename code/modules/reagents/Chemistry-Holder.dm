@@ -552,4 +552,6 @@
 /* Atom reagent creation - use it all the time */
 
 /atom/proc/create_reagents(var/max_vol)
-	reagents = new/datum/reagents(max_vol, src)
+	if(!reagents)
+		reagents = new/datum/reagents(max_vol, src)
+	reagents.maximum_volume = max_vol

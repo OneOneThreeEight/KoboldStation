@@ -664,6 +664,9 @@
 
 	var/datum/spawnpoint/spawnpos
 
+	if(H.client.prefs.xpos && H.client.prefs.ypos && H.client.prefs.zpos)
+		H.forceMove(locate(H.client.prefs.xpos, H.client.prefs.ypos, H.client.prefs.zpos))
+
 	if(H.client.prefs.spawnpoint)
 		spawnpos = SSatlas.spawn_locations[H.client.prefs.spawnpoint]
 

@@ -11,10 +11,8 @@ var/list/lunchables_lunches_ = list(
 	/obj/item/weapon/reagent_containers/food/snacks/liquidfood,
 	/obj/item/weapon/reagent_containers/food/snacks/jellysandwich/cherry,
 	/obj/item/weapon/reagent_containers/food/snacks/salad/tossedsalad,
-	/obj/item/weapon/reagent_containers/food/snacks/koiswaffles,
 	/obj/item/weapon/reagent_containers/food/snacks/funnelcake,
-	/obj/item/weapon/reagent_containers/food/snacks/hotdog,
-	/obj/item/weapon/reagent_containers/food/snacks/tajaran_bread
+	/obj/item/weapon/reagent_containers/food/snacks/hotdog
 )
 
 var/list/lunchables_snacks_ = list(
@@ -43,13 +41,10 @@ var/list/lunchables_snacks_ = list(
 	/obj/item/weapon/reagent_containers/food/snacks/cakeslice/birthday/filled,
 	/obj/item/weapon/reagent_containers/food/snacks/watermelonslice/filled,
 	/obj/item/weapon/reagent_containers/food/snacks/cakeslice/apple/filled,
-	/obj/item/weapon/reagent_containers/food/snacks/pumpkinpieslice/filled,
-	/obj/item/weapon/reagent_containers/food/snacks/skrellsnacks,
-	/obj/item/weapon/reagent_containers/food/snacks/friedkois,
+	/obj/item/weapon/reagent_containers/food/snacks/pumpkinpieslice/filled, 
 	/obj/item/weapon/reagent_containers/food/snacks/meatsnack,
 	/obj/item/weapon/reagent_containers/food/snacks/maps,
-	/obj/item/weapon/reagent_containers/food/snacks/nathisnack,
-	/obj/item/weapon/reagent_containers/food/snacks/adhomian_can
+	/obj/item/weapon/reagent_containers/food/snacks/nathisnack
 )
 
 var/list/lunchables_drinks_ = list(
@@ -64,7 +59,6 @@ var/list/lunchables_drinks_ = list(
 	/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice,
 	/obj/item/weapon/reagent_containers/food/drinks/cans/tonic,
 	/obj/item/weapon/reagent_containers/food/drinks/cans/sodawater,
-	/obj/item/weapon/reagent_containers/food/drinks/cans/adhomai_milk,
 	/obj/item/weapon/reagent_containers/food/drinks/cans/beetle_milk
 )
 

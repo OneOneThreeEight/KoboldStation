@@ -37,7 +37,10 @@ datum/preferences
 	var/gender = FEMALE					//gender of character (well duh)
 	var/age = 20						//age of character
 	var/spawnpoint = "Arrivals Shuttle" //where this character will spawn (0-2).
-	var/b_type = "A+"					//blood type (not-chooseable)
+	var/xpos							//where the character was saved at (x position)
+	var/ypos							//where the character was saved at (y position)
+	var/zpos							//where the character was saved at (z position)
+	var/b_type = "A+"					//blood type
 	var/underwear						//underwear type
 	var/undershirt						//undershirt type
 	var/socks						//socks type

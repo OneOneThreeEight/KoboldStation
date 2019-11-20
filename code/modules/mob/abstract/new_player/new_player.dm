@@ -201,7 +201,7 @@ INITIALIZE_IMMEDIATE(/mob/abstract/new_player)
 		if(!(S.spawn_flags & CAN_JOIN))
 			to_chat(src, alert("Your current species, [client.prefs.species], is not available for play on the station."))
 			return 0
-
+		
 		AttemptLateSpawn(href_list["SelectedJob"],client.prefs.spawnpoint)
 		return
 

@@ -20,6 +20,19 @@
 	if(created)
 		created += src
 
+/atom/Write(var/savefile/F)
+	. = ..()
+	if(!LAZYLEN(reagents?.reagent_list))
+		return
+	var/list/rlist = list()
+	var/list/rdata
+	for(var/datum/reagent/r in reagents.reagent_list)
+		rlist[r.id] = r.volume
+		if(LAZYLEN(r.data))
+			LAZYSET(rdata, r.id, r.data)
+	F["reagents_to_add"] << rlist
+	F["reagent_data"] << rdata
+
 /atom/proc/Initialize(mapload, ...)
 	if(initialized)
 		crash_with("Warning: [src]([type]) initialized multiple times!")
@@ -27,6 +40,13 @@
 
 	if (light_power && light_range)
 		update_light()
+	
+	if(reagents_to_add)
+		create_reagents(0)
+		for(var/v in reagents_to_add)
+			var/rdata = reagent_data[v]
+			reagents.add_reagent(v, reagents_to_add[v], rdata)
+			reagents.maximum_volume += reagents_to_add[v]
 
 	if (opacity && isturf(loc))
 		var/turf/T = loc

@@ -11,7 +11,6 @@
 	possible_transfer_amounts = list(5,10,15,25,30,60)
 	flags = 0
 	volume = 60
-	var/list/reagents_to_add
 
 /obj/item/weapon/reagent_containers/glass/bottle/on_reagent_change()
 	update_icon()
@@ -32,9 +31,6 @@
 	. = ..()
 	if(!icon_state)
 		icon_state = "bottle-[rand(1,4)]"
-
-	for(var/v in reagents_to_add)
-		reagents.add_reagent(v, reagents_to_add[v])
 
 	update_icon()
 
