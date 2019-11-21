@@ -5,6 +5,12 @@
 /hook/startup
 
 /**
+ * Shutdown hook.
+ * Called in world.dm when the server stops.
+ */
+/hook/shutdown
+
+/**
  * Roundstart hook.
  * Called in gameticker.dm when a round starts.
  */

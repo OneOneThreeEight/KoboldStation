@@ -1,10 +1,10 @@
 #define PROCESS_REACTION_ITER 5 //when processing a reaction, iterate this many times
 
 /datum/reagents
-	var/list/datum/reagent/reagent_list = list()
+	var/tmp/list/datum/reagent/reagent_list = list()
 	var/total_volume = 0
 	var/maximum_volume = 100
-	var/atom/my_atom = null
+	var/tmp/atom/my_atom = null
 
 	var/temperature = T20C
 

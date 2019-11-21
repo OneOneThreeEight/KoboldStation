@@ -164,7 +164,7 @@ var/list/cleanbot_types // Going to use this to generate a list of types once th
 	if(!found_spot && !target) // No targets in range
 		if(!patrol_path || !patrol_path.len)
 			if(!signal_sent || signal_sent > world.time + 200) // Waited enough or didn't send yet
-				var/datum/radio_frequency/frequency = SSradio.return_frequency(beacon_freq)
+				var/tmp/datum/radio_frequency/frequency = SSradio.return_frequency(beacon_freq)
 				if(!frequency)
 					return
 

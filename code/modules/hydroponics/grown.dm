@@ -10,7 +10,7 @@
 
 	var/plantname
 	var/datum/seed/seed
-	var/potency = -1
+	var/tmp/potency = -1
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/Initialize(loca, planttype)
 	. = ..()
@@ -30,8 +30,9 @@
 		to_world("<span class='danger'>Plant controller does not exist and [src] requires it. Aborting.</span>")
 		qdel(src)
 		return
-
-	seed = SSplants.seeds[plantname]
+	
+	if(!seed)
+		seed = SSplants.seeds[plantname]
 
 	if(!seed)
 		return

@@ -21,7 +21,7 @@
 	// 16 for nitrogen concentration
 	// 32 for carbon dioxide concentration
 
-	var/datum/radio_frequency/radio_connection
+	var/tmp/datum/radio_frequency/radio_connection
 
 /obj/machinery/air_sensor/update_icon()
 	icon_state = "gsensor[on]"
@@ -84,7 +84,7 @@ obj/machinery/air_sensor/Destroy()
 	var/list/sensors = list()
 
 	var/list/sensor_information = list()
-	var/datum/radio_frequency/radio_connection
+	var/tmp/datum/radio_frequency/radio_connection
 	circuit = /obj/item/weapon/circuitboard/air_management
 
 obj/machinery/computer/general_air_control/Destroy()

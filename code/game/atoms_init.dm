@@ -1,5 +1,5 @@
 /atom
-	var/initialized = FALSE
+	var/tmp/initialized = FALSE
 	var/update_icon_on_init	// Default to 'no'.
 
 /atom/New(loc, ...)
@@ -22,13 +22,15 @@
 
 /atom/Write(var/savefile/F)
 	. = ..()
-	if(!LAZYLEN(reagents?.reagent_list))
+	if(!reagents)
+		return
+	if(!LAZYLEN(reagents.reagent_list))
 		return
 	var/list/rlist = list()
 	var/list/rdata
 	for(var/datum/reagent/r in reagents.reagent_list)
 		rlist[r.id] = r.volume
-		if(LAZYLEN(r.data))
+		if(!isnull(r.data))
 			LAZYSET(rdata, r.id, r.data)
 	F["reagents_to_add"] << rlist
 	F["reagent_data"] << rdata
@@ -41,12 +43,13 @@
 	if (light_power && light_range)
 		update_light()
 	
-	if(reagents_to_add)
+	if(LAZYLEN(reagents_to_add))
 		create_reagents(0)
 		for(var/v in reagents_to_add)
-			var/rdata = reagent_data[v]
-			reagents.add_reagent(v, reagents_to_add[v], rdata)
 			reagents.maximum_volume += reagents_to_add[v]
+			reagents.add_reagent(v, reagents_to_add[v], LAZYACCESS(reagent_data, v))
+		LAZYCLEARLIST(reagents_to_add)
+		LAZYCLEARLIST(reagent_data)
 
 	if (opacity && isturf(loc))
 		var/turf/T = loc

@@ -119,8 +119,8 @@
 	if(!F || !H)
 		return
 	H.visible_message(
-						span("warning", "\the [src] grabs \the [F] with its teeth and steals it from \the [H] hands. Taking a bite and dropping it on the floor."),
-						span("warning", "\the [src] grabs \the [F] with its teeth and steals it from your hands. Taking a bite and dropping it on the floor.")
+						span("warning", "\the [src] grabs \the [F] with its teeth and steals it from \the [H]'s hands, taking a bite and dropping it on the floor."),
+						span("warning", "\the [src] grabs \the [F] with its teeth and steals it from your hands, taking a bite and dropping it on the floor.")
 	)
 	H.drop_from_inventory(F)
 	UnarmedAttack(F)

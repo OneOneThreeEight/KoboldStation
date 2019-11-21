@@ -16,6 +16,7 @@ var/datum/controller/subsystem/atlas/SSatlas
 	var/list/mapload_callbacks = list()
 	var/map_override	// If set, SSatlas will forcibly load this map. If the map does not exist, mapload will fail and SSatlas will panic.
 	var/list/spawn_locations = list()
+	var/loaded_save = FALSE
 
 	var/list/connected_z_cache = list()
 	var/z_levels = 0	// Each bit represents a connection between adjacent levels.  So the first bit means levels 1 and 2 are connected.
@@ -112,6 +113,14 @@ var/datum/controller/subsystem/atlas/SSatlas
 
 		.++
 		CHECK_TICK
+		if(!fexists("map_[current_map.path][.].txt") && !fexists("map_[current_map.path][.].sav"))
+			continue
+		log_ss("atlas", "Loading map savefile for [current_map.path][.]...")
+		if(!SwapMaps_LoadChunk("[current_map.path][.]", locate(1, 1, .)))
+			log_ss("atlas", "Failed to load existing savefile for [current_map.path][.].")
+			continue
+		loaded_save = TRUE
+		log_ss("atlas", "Successfully loaded savefile for [current_map.path][.]!")
 
 /datum/controller/subsystem/atlas/proc/setup_multiz()
 	for (var/thing in height_markers)

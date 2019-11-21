@@ -24,19 +24,19 @@
 
 	var/footstep_sound = "defaultstep"
 
-	var/list/decals
+	var/tmp/list/decals
 
 	var/is_hole		// If true, turf will be treated as space or a hole
 	var/tmp/turf/baseturf
 
-	var/roof_type = null // The turf type we spawn as a roof.
+	var/tmp/roof_type = null // The turf type we spawn as a roof.
 	var/tmp/roof_flags = 0
 
 	var/movement_cost = 0 // How much the turf slows down movement, if any.
 
 	//Mining resources (for the large drills).
 	var/has_resources
-	var/list/resources
+	var/tmp/list/resources
 
 	// Plating data.
 	var/base_name = "plating"

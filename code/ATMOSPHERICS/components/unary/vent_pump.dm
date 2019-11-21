@@ -43,7 +43,7 @@
 	var/welded = 0 // Added for aliens -- TLE
 
 	var/frequency = 1439
-	var/datum/radio_frequency/radio_connection
+	var/tmp/datum/radio_frequency/radio_connection
 
 	var/radio_filter_out
 	var/radio_filter_in

@@ -445,7 +445,7 @@
 	post_signal_multiple(freq, list("[key]" = value))
 
 /obj/secbot_listener/proc/post_signal_multiple(var/freq, var/list/keyval) // send a radio signal with multiple data key/values
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(freq)
+	var/tmp/datum/radio_frequency/frequency = SSradio.return_frequency(freq)
 	if(!frequency)
 		return
 

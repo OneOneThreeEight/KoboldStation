@@ -8,7 +8,7 @@
 	var/possible_transfer_amounts = list(5,10,15,25,30)
 	var/volume = 30
 	var/accuracy = 1
-	var/can_be_placed_into = list(
+	var/tmp/can_be_placed_into = list(
 		/obj/machinery/chem_master,
 		/obj/machinery/chem_heater,
 		/obj/machinery/chemical_dispenser,
@@ -52,9 +52,6 @@
 	if(!possible_transfer_amounts)
 		src.verbs -= /obj/item/weapon/reagent_containers/verb/set_APTFT
 	create_reagents(volume)
-
-/obj/item/weapon/reagent_containers/Write()
-	
 
 /obj/item/weapon/reagent_containers/attack_self(mob/user as mob)
 	return

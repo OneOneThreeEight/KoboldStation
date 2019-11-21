@@ -67,7 +67,7 @@
 	var/target_temperature = T0C+20
 	var/regulating_temperature = 0
 
-	var/datum/radio_frequency/radio_connection
+	var/tmp/datum/radio_frequency/radio_connection
 
 	var/list/TLV = list()
 	var/list/trace_gas = list("sleeping_agent") //list of other gases that this air alarm is able to detect
@@ -425,7 +425,7 @@
 	update_icon()
 
 /obj/machinery/alarm/proc/post_alert(alert_level)
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(alarm_frequency)
+	var/tmp/datum/radio_frequency/frequency = SSradio.return_frequency(alarm_frequency)
 	if(!frequency)
 		return
 

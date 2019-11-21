@@ -142,7 +142,7 @@ var/prison_shuttle_timeleft = 0
 
 
 	proc/post_signal(var/command)
-		var/datum/radio_frequency/frequency = SSradio.return_frequency(1311)
+		var/tmp/datum/radio_frequency/frequency = SSradio.return_frequency(1311)
 		if(!frequency) return
 		var/datum/signal/status_signal = new
 		status_signal.source = src

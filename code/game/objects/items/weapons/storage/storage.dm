@@ -18,18 +18,18 @@
 	w_class = 3
 	var/list/can_hold  //List of objects which this item can store (if set, it can't store anything else)
 	var/list/cant_hold //List of objects which this item can't store (in effect only if can_hold isn't set)
-	var/list/is_seeing //List of mobs which are currently seeing the contents of this item's storage
+	var/tmp/list/is_seeing //List of mobs which are currently seeing the contents of this item's storage
 	var/max_w_class = 3 //Max size of objects that this object can store (in effect only if can_hold isn't set)
 	var/max_storage_space = 8 //The sum of the storage costs of all the items in this storage item.
 	var/storage_slots //The number of storage slots in this container.
-	var/obj/screen/storage/boxes
-	var/obj/screen/storage/storage_start //storage UI
-	var/obj/screen/storage/storage_continue
-	var/obj/screen/storage/storage_end
-	var/obj/screen/storage/stored_start
-	var/obj/screen/storage/stored_continue
-	var/obj/screen/storage/stored_end
-	var/obj/screen/close/closer
+	var/tmp/obj/screen/storage/boxes
+	var/tmp/obj/screen/storage/storage_start //storage UI
+	var/tmp/obj/screen/storage/storage_continue
+	var/tmp/obj/screen/storage/storage_end
+	var/tmp/obj/screen/storage/stored_start
+	var/tmp/obj/screen/storage/stored_continue
+	var/tmp/obj/screen/storage/stored_end
+	var/tmp/obj/screen/close/closer
 	var/use_to_pickup	//Set this to make it possible to use this item in an inverse way, so you can have the item in your hand and click items on the floor to pick them up.
 	var/display_contents_with_number	//Set this to make the storage item group contents of the same type and display them as a number.
 	var/allow_quick_empty	//Set this variable to allow the object to have the 'empty' verb, which dumps all the contents on the floor.
@@ -592,6 +592,7 @@
 				continue
 			for(var/i=0, i<starts_with[t], i++)
 				new t(src)
+		LAZYCLEARLIST(starts_with) // so we don't re-fill saved boxes
 	return
 
 /obj/item/weapon/storage/Initialize(mapload, defer_shrinkwrap = FALSE)

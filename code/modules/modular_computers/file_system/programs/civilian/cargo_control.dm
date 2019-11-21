@@ -240,7 +240,7 @@
 
 /datum/nano_module/program/civilian/cargocontrol/proc/post_signal(var/command) //Old code right here - Used to send a refresh command to the status screens incargo
 
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(1435)
+	var/tmp/datum/radio_frequency/frequency = SSradio.return_frequency(1435)
 
 	if(!frequency) return
 

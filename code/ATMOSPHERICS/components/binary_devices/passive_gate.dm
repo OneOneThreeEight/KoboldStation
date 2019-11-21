@@ -22,7 +22,7 @@
 
 	var/frequency = 0
 	var/id = null
-	var/datum/radio_frequency/radio_connection
+	var/tmp/datum/radio_frequency/radio_connection
 
 /obj/machinery/atmospherics/binary/passive_gate/Initialize()
 	. = ..()

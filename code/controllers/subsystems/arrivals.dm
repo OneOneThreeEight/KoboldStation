@@ -82,7 +82,7 @@
 
 /datum/controller/subsystem/arrivals/proc/post_signal(var/command)
 
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(1435)
+	var/tmp/datum/radio_frequency/frequency = SSradio.return_frequency(1435)
 
 	if(!frequency) return
 

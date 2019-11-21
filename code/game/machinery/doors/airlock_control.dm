@@ -174,7 +174,7 @@
 	var/frequency = 1379
 	var/command = "cycle"
 
-	var/datum/radio_frequency/radio_connection
+	var/tmp/datum/radio_frequency/radio_connection
 
 	var/on = 1
 	var/alert = 0
@@ -252,7 +252,7 @@
 	var/frequency = 1449
 	var/command = "cycle"
 
-	var/datum/radio_frequency/radio_connection
+	var/tmp/datum/radio_frequency/radio_connection
 
 	var/on = 1
 

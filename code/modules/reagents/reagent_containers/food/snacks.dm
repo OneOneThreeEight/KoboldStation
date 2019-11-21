@@ -151,7 +151,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/examine(mob/user)
 	if(!..(user, 1))
 		return
-	if(name != initial(name))
+	if(name != initial(name) && !istype(src, /obj/item/weapon/reagent_containers/food/snacks/grown))
 		to_chat(user, "<span class='notice'>You know the item as [initial(name)], however a little piece of propped up paper indicates it's \a [name].</span>")
 	if (coating)
 		to_chat(user, "<span class='notice'>It's coated in [coating.name]!</span>")

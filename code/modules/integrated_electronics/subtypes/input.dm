@@ -342,7 +342,7 @@
 
 	var/frequency = 1457
 	var/code = 30
-	var/datum/radio_frequency/radio_connection
+	var/tmp/datum/radio_frequency/radio_connection
 
 /obj/item/integrated_circuit/input/signaler/Initialize()
 	..()

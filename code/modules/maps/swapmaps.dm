@@ -235,10 +235,11 @@ swapmap
 					var/turf/T=locate(x,y,z)
 					S["type"] << T.type
 					if(T.loc!=defarea) S["AREA"] << areas[T.loc]
+					//world.log << "Writing [T] at [T.x], [T.y], [T.z]"
 					T.Write(S)
 					S.cd=".."
 				S.cd=".."
-			sleep()
+			CHECK_TICK
 			S.cd=oldcd
 		locked=0
 		qdel(areas)
@@ -286,15 +287,18 @@ swapmap
 						A.contents+=T
 					else defarea.contents+=T
 					// clear the turf
-					for(var/obj/O in T) qdel(O)
+					for(var/obj/O in T)
+						CHECK_TICK
+						qdel(O)
 					for(var/mob/M in T)
+						CHECK_TICK
 						if(!M.key) qdel(M)
 						else M.loc=null
 					// finish the read
 					T.Read(S)
 					S.cd=".."
 				S.cd=".."
-			sleep()
+			CHECK_TICK
 			S.cd=oldcd
 		locked=0
 		qdel(areas)
@@ -383,7 +387,7 @@ swapmap
 		if(id==src) return 0
 		var/savefile/S=mode?(new):new("map_[id].sav")
 		to_chat(S, src)
-		while(locked) sleep(1)
+		while(locked) CHECK_TICK
 		if(mode)
 			fdel("map_[id].txt")
 			S.ExportText("/","map_[id].txt")
@@ -453,19 +457,15 @@ swapmap
 
 atom
 	Write(savefile/S)
-		for(var/V in vars-"x"-"y"-"z"-"contents"-"icon"-"overlays"-"underlays")
+		for(var/V in vars-"x"-"y"-"z"-"contents"-"vis_contents"-"luminosity"-"initialized"-"transform"-"icon"-"lighting_overlay"-"overlays"-"underlays"-"filters")
 			if(issaved(vars[V]))
-				if(vars[V]!=initial(vars[V])) S[V]<<vars[V]
+				if(vars[V]!=initial(vars[V]))
+					//world.log << "Saving [V] of [src] at [src.x], [src.y], [src.z]"
+					S[V]<<vars[V]
 				else S.dir.Remove(V)
-		if(icon!=initial(icon))
-			if(swapmaps_iconcache && swapmaps_iconcache[icon])
-				S["icon"]<<swapmaps_iconcache[icon]
-			else S["icon"]<<icon
 		// do not save mobs with keys; do save other mobs
 		var/mob/M
 		for(M in src) if(M.key) break
-		if(overlays.len) S["overlays"]<<overlays
-		if(underlays.len) S["underlays"]<<underlays
 		if(contents.len && !isarea(src))
 			var/list/l=contents
 			if(M)
@@ -477,15 +477,11 @@ atom
 		var/list/l
 		if(contents.len) l=contents
 		..()
-		// if the icon was a text string, it would not have loaded properly
-		// replace it from the cache list
-		if(!icon && ("icon" in S.dir))
-			var/ic
-			S["icon"]>>ic
-			if(istext(ic)) icon=swapmaps_iconcache[ic]
 		if(l && contents!=l)
 			contents+=l
 			qdel(l)
+		S["reagents_to_add"] >> vars["reagents_to_add"]
+		S["reagent_data"] >> vars["reagent_data"]
 
 
 // set this up (at runtime) as follows:
@@ -499,7 +495,7 @@ var/list/swapmaps_iconcache
 // preferred mode; sav or text
 var/const/SWAPMAPS_SAV=0
 var/const/SWAPMAPS_TEXT=1
-var/swapmaps_mode=SWAPMAPS_SAV
+var/swapmaps_mode=SWAPMAPS_TEXT
 
 var/swapmaps_compiled_maxx
 var/swapmaps_compiled_maxy
@@ -548,7 +544,7 @@ proc/SwapMaps_Load(id)
 			S=new
 			S.ImportText("/",file("map_[id].txt"))
 		S >> M
-		while(M.locked) sleep(1)
+		while(M.locked) sleep()
 		M.mode=text
 	return M
 
@@ -598,10 +594,11 @@ proc/SwapMaps_CreateFromTemplate(template_id)
 	S.cd="//.0"
 	M.Read(S,M)
 	M.mode=text
-	while(M.locked) sleep(1)
+	while(M.locked) sleep()
 	return M
 
 proc/SwapMaps_LoadChunk(chunk_id,turf/locorner)
+	set background = 1
 	var/swapmap/M=new
 	var/savefile/S
 	var/text=0
@@ -624,11 +621,12 @@ proc/SwapMaps_LoadChunk(chunk_id,turf/locorner)
 	 */
 	S.cd="//.0"
 	M.Read(S,M,locorner)
-	while(M.locked) sleep(1)
+	while(M.locked) sleep()
 	qdel(M)
 	return 1
 
 proc/SwapMaps_SaveChunk(chunk_id,turf/corner1,turf/corner2)
+	set background = 1
 	if(!corner1 || !corner2)
 		world.log <<  "SwapMaps error in SwapMaps_SaveChunk():"
 		if(!corner1) world.log <<  "  corner1 turf is null"
@@ -645,7 +643,7 @@ proc/SwapMaps_SaveChunk(chunk_id,turf/corner1,turf/corner2)
 	M.z2=max(corner1.z,corner2.z)
 	M.mode=swapmaps_mode
 	M.Save()
-	while(M.locked) sleep(1)
+	while(M.locked) sleep()
 	qdel(M)
 	return 1
 

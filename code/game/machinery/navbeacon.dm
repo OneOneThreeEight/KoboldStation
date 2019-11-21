@@ -89,7 +89,7 @@ var/global/list/navbeacons			// no I don't like putting this in, but it will do 
 
 	proc/post_signal()
 
-		var/datum/radio_frequency/frequency = SSradio.return_frequency(freq)
+		var/tmp/datum/radio_frequency/frequency = SSradio.return_frequency(freq)
 
 		if(!frequency) return
 
