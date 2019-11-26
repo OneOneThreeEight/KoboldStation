@@ -22,6 +22,8 @@
 	for(var/g in air.gas)
 		if(!(g in vars))
 			continue
+		if(round(air.gas[g]) == round(initial(vars[g])))
+			continue
 		F[g] << air.gas[g]
 	temperature = air.temperature
 

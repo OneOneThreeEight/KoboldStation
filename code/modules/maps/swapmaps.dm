@@ -457,7 +457,7 @@ swapmap
 
 atom
 	Write(savefile/S)
-		for(var/V in vars-"x"-"y"-"z"-"contents"-"vis_contents"-"luminosity"-"initialized"-"transform"-"icon"-"lighting_overlay"-"overlays"-"underlays"-"filters")
+		for(var/V in vars-"x"-"y"-"z"-"contents"-"reagents_to_add"-"reagents"-"vis_contents"-"luminosity"-"initialized"-"transform"-"icon"-"lighting_overlay"-"overlays"-"underlays"-"filters")
 			if(issaved(vars[V]))
 				if(vars[V]!=initial(vars[V]))
 					//world.log << "Saving [V] of [src] at [src.x], [src.y], [src.z]"
@@ -473,6 +473,15 @@ atom
 				for(M in src) if(M.key) l-=M
 			if(l.len) S["contents"]<<l
 			if(l!=contents) qdel(l)
+		LAZYCLEARLIST(reagents_to_add)
+		LAZYCLEARLIST(reagent_data)
+		if(reagents && LAZYLEN(reagents.reagent_list))
+			for(var/datum/reagent/r in reagents.reagent_list)
+				LAZYSET(reagents_to_add, r.id, r.volume)
+				if(!isnull(r.data))
+					LAZYSET(reagent_data, r.id, r.data)
+			if(LAZYLEN(reagents_to_add))	S["reagents_to_add"] << reagents_to_add
+			if(LAZYLEN(reagent_data))	S["reagent_data"] << reagent_data
 	Read(savefile/S)
 		var/list/l
 		if(contents.len) l=contents
@@ -480,8 +489,6 @@ atom
 		if(l && contents!=l)
 			contents+=l
 			qdel(l)
-		S["reagents_to_add"] >> vars["reagents_to_add"]
-		S["reagent_data"] >> vars["reagent_data"]
 
 
 // set this up (at runtime) as follows:

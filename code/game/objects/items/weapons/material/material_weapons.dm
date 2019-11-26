@@ -17,8 +17,13 @@
 	var/force_divisor = 0.5
 	var/thrown_force_divisor = 0.5
 	var/default_material = DEFAULT_WALL_MATERIAL
-	var/material/material
+	var/tmp/material/material
 	var/drops_debris = 1
+
+/obj/item/weapon/material/Write(var/savefile/F)
+	default_material = material?.name
+	material = null
+	. = ..()
 
 /obj/item/weapon/material/New(var/newloc, var/material_key)
 	..(newloc)

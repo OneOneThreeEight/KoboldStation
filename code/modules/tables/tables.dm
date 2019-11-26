@@ -17,8 +17,8 @@
 	var/can_plate = 1
 
 	var/manipulating = 0
-	var/material/material = null
-	var/material/reinforced = null
+	var/tmp/material/material = null
+	var/tmp/material/reinforced = null
 
 	// Gambling tables. I'd prefer reinforced with carpet/felt/cloth/whatever, but AFAIK it's either harder or impossible to get /obj/item/stack/material of those.
 	// Convert if/when you can easily get stacks of these.
@@ -37,6 +37,13 @@
 			maxhealth += reinforced.integrity / 2
 
 	health += maxhealth - old_maxhealth
+
+/obj/structure/table/Write(var/savefile/F)
+	table_mat = material?.name
+	table_reinf = reinforced?.name
+	material = null
+	reinforced = null
+	. = ..()
 
 /obj/structure/table/proc/take_damage(amount)
 	// If the table is made of a brittle material, and is *not* reinforced with a non-brittle material, damage is multiplied by TABLE_BRITTLE_MATERIAL_MULTIPLIER

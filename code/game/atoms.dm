@@ -19,8 +19,8 @@
 
 	///Chemistry.
 	var/tmp/datum/reagents/reagents = null
-	var/tmp/list/reagents_to_add
-	var/tmp/list/reagent_data
+	var/list/reagents_to_add
+	var/list/reagent_data
 
 	//var/chem_is_open_container = 0
 	// replaced by OPENCONTAINER flags and atom/proc/is_open_container()

@@ -20,21 +20,6 @@
 	if(created)
 		created += src
 
-/atom/Write(var/savefile/F)
-	. = ..()
-	if(!reagents)
-		return
-	if(!LAZYLEN(reagents.reagent_list))
-		return
-	var/list/rlist = list()
-	var/list/rdata
-	for(var/datum/reagent/r in reagents.reagent_list)
-		rlist[r.id] = r.volume
-		if(!isnull(r.data))
-			LAZYSET(rdata, r.id, r.data)
-	F["reagents_to_add"] << rlist
-	F["reagent_data"] << rdata
-
 /atom/proc/Initialize(mapload, ...)
 	if(initialized)
 		crash_with("Warning: [src]([type]) initialized multiple times!")

@@ -412,7 +412,7 @@ var/const/enterloopsanity = 100
 		return
 	if(istype(O, /obj/screen))
 		return
-	if(user.restrained() || user.stat || user.stunned || user.paralysis || !user.lying)
+	if(user.restrained() || user.stat || user.stunned || user.paralysis)
 		return
 	if((!(istype(O, /atom/movable)) || O.anchored || !Adjacent(user) || !Adjacent(O) || !user.Adjacent(O)))
 		return
