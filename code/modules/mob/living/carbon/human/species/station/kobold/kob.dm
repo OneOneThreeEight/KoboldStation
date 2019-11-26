@@ -5,10 +5,10 @@
     name_plural = "Kobolds"
     bodytype = "Kobold"
     icobase = 'icons/mob/human_races/kobold/r_kob.dmi'
-    //deform = 'icons/mob/human_races/kobold/r_def_lizard.dmi'
-    //preview_icon = 'icons/mob/human_races/kobold/unathi_preview.dmi'
-    //tail = "kobtail"
-    //tail_animation = 'icons/mob/species/kobold/tail.dmi'
+    deform = 'icons/mob/human_races/kobold/r_def_kob.dmi'
+    preview_icon = 'icons/mob/human_races/kobold/unathi_preview.dmi'
+    tail = "kobtail"
+    tail_animation = 'icons/mob/species/kobold/tail.dmi'
     unarmed_types = list(
         /datum/unarmed_attack/stomp,
         /datum/unarmed_attack/kick,
@@ -27,7 +27,7 @@
     num_alternate_languages = 3
     language = LANGUAGE_KOBOLD
     name_language = LANGUAGE_KOBOLD
-    stamina =   120           // the shortest but fastest sprint of all
+    stamina =   120           // Shorter, faster than humans.
     sprint_speed_factor = 3.2
     stamina_recovery = 5
     sprint_cost_factor = 1.45
