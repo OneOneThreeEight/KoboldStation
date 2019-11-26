@@ -625,20 +625,20 @@ mob/living/carbon/human/proc/change_monitor()
 	if (victims.len)
 		admin_attacker_log_many_victims(src, victims, "used rebel yell to stun", "was stunned by [key_name(src)] using rebel yell", "used rebel yell to stun")
 
-/mob/living/carbon/human/proc/formic_spray()
+/mob/living/carbon/human/proc/fire_spray()
 	set category = "Abilities"
-	set name = "Napalm"
-	set desc = "Spew a cone of ignited napalm in front of you"
+	set name = "Searing Burst"
+	set desc = "Spew a cone of magical flame in front of you."
 
 	if(last_special > world.time)
-		to_chat(src,"<span class='notice'>You are too tired to spray napalm!</span>")
+		to_chat(src,"<span class='notice'>You are too tired to spray fire!</span>")
 		return
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
-		to_chat(src,"<span class='notice'>You cannot spray napalm in your current state.</span>")
+		to_chat(src,"<span class='notice'>You cannot spray fire in your current state.</span>")
 		return
 
-	last_special = world.time + 100
+	last_special = world.time + 20 SECONDS
 	playsound(loc, 'sound/species/shadow/grue_screech.ogg', 100, 1)
 	visible_message("<span class='danger'>\The [src] unleashes a torrent of raging flame!</span>",
 			"<span class='danger'>You unleash a gust of fire!</span>",
