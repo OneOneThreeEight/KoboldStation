@@ -16,6 +16,7 @@
 		"ra", "ar", "re", "er", "ri", "ir", "ro", "or", "ru", "ur", "rs", "sr",
 		"a",  "a",  "e",  "e",  "i",  "i",  "o",  "o",  "u",  "u",  "s",  "s"
 	)
+	partial_understanding = list(LANGUAGE_DRAGON = 70)
 
 /datum/language/kobold/get_spoken_verb(var/msg_end)
 	switch(msg_end)
@@ -42,3 +43,13 @@
 		if("?")
 			return ask_verb
 	return speech_verb
+
+/datum/language/dragon
+	name = LANGUAGE_DRAGON
+	desc = "An elaborate, high-context language spoken universally by dragons and widely by magicians, regarded as the ideal form of language by most of the former."
+	speech_verb = "hisses"
+	ask_verb = "hisses"
+	exclaim_verb = "roars"
+	key = "d"
+	flags = TCOMSSIM
+	syllables = list("azs","zis","zau","azua","skiu","zuakz","izo","aei","ki","kut","zo")
