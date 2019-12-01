@@ -110,7 +110,6 @@ var/datum/controller/subsystem/atlas/SSatlas
 				log_ss("atlas", "Loaded existing savefile for [current_map.path][.+1].")
 				loaded_save = TRUE
 				.++
-				CHECK_TICK
 				continue
 		// we couldn't load a savefile, so load the map proper
 		mfile = "[directory][mfile]"
@@ -121,7 +120,6 @@ var/datum/controller/subsystem/atlas/SSatlas
 			log_ss("atlas", "Loaded level in [(world.time - time)/10] seconds.")
 
 		.++
-		CHECK_TICK
 
 /datum/controller/subsystem/atlas/proc/setup_multiz()
 	for (var/thing in height_markers)
