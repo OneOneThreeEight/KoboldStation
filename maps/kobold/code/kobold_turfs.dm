@@ -7,7 +7,9 @@
 	nitrogen = MOLES_NITROGEN_NAARVAT
 	carbon_dioxide = MOLES_CARBONDIOXIDE_NAARVAT
 	temperature = TEMPERATURE_NAARVAT
-	var/dug = 0 //Increments by 1 everytime it's dug. 11 is the last integer that should ever be here.
+
+/turf/simulated/floor/planet
+	var/dug = 0 //Increments by 1 every time it's dug. 11 is the last integer that should ever be here.
 	var/digging
 	has_resources = 1
 	roof_type = null
@@ -121,7 +123,10 @@
 					if(10)
 						to_chat(user, "<span class='notice'>Just a little deeper...</span>")
 					else
-						to_chat(user, "<span class='notice'>You penetrate the virgin earth!</span>")
+						if(is_type_in_typecache(W, pen_tools))
+							to_chat(user, span("notice", "You penetrate the virgin earth!"))
+						else
+							to_chat(user, span("notice", "You shovel away some more sand."))
 			else
 				if(dug <= 10)
 					to_chat(user, "<span class='notice'>You dig a little deeper.</span>")

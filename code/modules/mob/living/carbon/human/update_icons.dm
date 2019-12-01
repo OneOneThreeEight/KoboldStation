@@ -154,7 +154,7 @@ There are several things that need to be remembered:
 	if (size_multiplier_x > 1 || size_multiplier_y > 1)
 		appearance_flags |= PIXEL_SCALE
 	else
-		appearance_flags ~= PIXEL_SCALE
+		appearance_flags &= ~PIXEL_SCALE
 	if (lying_prev != lying)
 		if(lying && !species.prone_icon) //Only rotate them if we're not drawing a specific icon for being prone.
 			var/matrix/M = matrix()
