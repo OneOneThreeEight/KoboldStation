@@ -241,11 +241,11 @@
 		for(var/number in list(melee_armor, bullet_armor, laser_armor, energy_armor, bomb_armor))
 			number = between(0, number, 100)
 
-		armor["melee"] = melee_armor
-		armor["bullet"] = bullet_armor
-		armor["laser"] = laser_armor
-		armor["energy"] = energy_armor
-		armor["bomb"] = bomb_armor
+		LAZYSET(armor, "melee", melee_armor)
+		LAZYSET(armor, "bullet", bullet_armor)
+		LAZYSET(armor, "laser", laser_armor)
+		LAZYSET(armor, "energy", energy_armor)
+		LAZYSET(armor, "bomb", bomb_armor)
 
 		if(!isnull(material.conductivity))
 			siemens_coefficient = between(0, material.conductivity / 10, 10)

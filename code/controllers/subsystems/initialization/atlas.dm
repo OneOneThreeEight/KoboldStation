@@ -110,6 +110,7 @@ var/datum/controller/subsystem/atlas/SSatlas
 				log_ss("atlas", "Loaded existing savefile for [current_map.path][.+1].")
 				loaded_save = TRUE
 				.++
+				log_ss("atlas", "Loaded save in [(world.time - time)/10] seconds.")
 				continue
 		// we couldn't load a savefile, so load the map proper
 		mfile = "[directory][mfile]"

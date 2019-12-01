@@ -30,10 +30,7 @@
 	if(!islist(newdata) || !newdata.len)
 		return
 	for(var/i in 1 to newdata.len)
-		if(!(newdata[i] in data))
-			data.Add(newdata[i])
-			data[newdata[i]] = 0
-		data[newdata[i]] += newdata[newdata[i]]
+		LAZYSET(data, newdata[i], LAZYACCESS(data, newdata[i]) + newdata[newdata[i]])
 	var/totalFlavor = 0
 	for(var/i in 1 to data.len)
 		totalFlavor += data[data[i]]
@@ -43,9 +40,8 @@
 
 	for(var/i in 1 to data.len) //cull the tasteless
 		if(data[data[i]]/totalFlavor * 100 < 10)
-			data[data[i]] = null
-			data -= data[i]
-			data -= null
+			LAZYREMOVE(data, data[i])
+			LAZYREMOVE(data, i)
 
 /datum/reagent/nutriment/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(injectable)
