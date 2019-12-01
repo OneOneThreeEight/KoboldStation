@@ -6,7 +6,7 @@
     bodytype = "Kobold"
     icobase = 'icons/mob/human_races/kobold/r_kob.dmi'
     deform = 'icons/mob/human_races/kobold/r_def_kob.dmi'
-    preview_icon = 'icons/mob/human_races/kobold/unathi_preview.dmi'
+    //preview_icon = 'icons/mob/human_races/unathi/unathi_preview.dmi'
     tail = "kobtail"
     tail_animation = 'icons/mob/species/kobold/tail.dmi'
     unarmed_types = list(

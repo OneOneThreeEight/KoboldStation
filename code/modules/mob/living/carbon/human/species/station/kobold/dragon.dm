@@ -25,46 +25,46 @@
     total_health = 200
     breakcuffs = list(MALE,FEMALE,NEUTER)
     mob_size = 30
- 
+
     speech_sounds = list('sound/voice/roar1.ogg','sound/voice/roar2.ogg','sound/voice/roar3.ogg','sound/voice/roar4.ogg')
     speech_chance = 100
- 
+
     death_sound = 'sound/voice/roar6.ogg'
     damage_overlays = 'icons/mob/human_races/masks/dam_mask_dragon.dmi'
     damage_mask = 'icons/mob/human_races/masks/dam_mask_dragon.dmi'
     blood_mask = 'icons/mob/human_races/masks/dam_mask_dragon.dmi'
     onfire_overlay = 'icons/mob/OnFire_large.dmi'
- 
- 
+
+
     stamina = 200
     stamina_recovery = 5
     sprint_speed_factor = 0.9
     sprint_cost_factor = 0.5
- 
+
     heat_level_1 = 1000 //Default 360
     heat_level_2 = 4000 //Default 400
     heat_level_3 = 16000 //Default 1000
     hazard_high_pressure = 55000 //Default 550
     warning_high_pressure = 3250 //Default 325
- 
+
     spawn_flags = CAN_JOIN
-    flags = NO_SCAN | NO_SLIP | NO_PAIN |
- 
+    flags = NO_SLIP
+
     inherent_verbs = list(
         /mob/living/carbon/human/proc/rebel_yell,
         /mob/living/carbon/human/proc/devour_head,
         /mob/living/carbon/human/proc/fire_spray,
         /mob/living/carbon/human/proc/trample
         )
- 
+
     has_organ = list(
         "lungs"               = /obj/item/organ/lungs/dragon,
         "heart"               = /obj/item/organ/heart/dragon,
         "brain"               = /obj/item/organ/brain/dragon,
         "eyes"                = /obj/item/organ/eyes/dragon,
-        "kidney"              = /obj/item/organ/kidney/dragon
+        "kidney"              = /obj/item/organ/kidney/dragon,
         "liver"               = /obj/item/organ/liver/dragon
     )
- 
+
     default_h_style = "Bald"
- 
+

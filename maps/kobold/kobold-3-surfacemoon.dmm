@@ -2,6 +2,309 @@
 "a" = (
 /turf/simulated/floor/planet/sand,
 /area/mine/explored)
+"b" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"c" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"d" = (
+/obj/effect/landmark/map_data{
+	height = 3
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"e" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"f" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/kobold/surface)
+"g" = (
+/obj/structure/lattice/catwalk/indoor,
+/obj/structure/cable/green{
+	d1 = 8;
+	d2 = 32;
+	icon_state = "11-8"
+	},
+/turf/simulated/open,
+/area/kobold/surface)
+"h" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"n" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"p" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"q" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"s" = (
+/obj/machinery/power/smes/batteryrack{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"t" = (
+/obj/structure/window/basic{
+	icon_state = "window";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"w" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"x" = (
+/obj/structure/window/basic{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"y" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"z" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"A" = (
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"B" = (
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"C" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"E" = (
+/obj/machinery/power/solar_control,
+/obj/structure/cable/yellow,
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"F" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"G" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"H" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"I" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"K" = (
+/turf/simulated/wall/rusty,
+/area/kobold/surface)
+"M" = (
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/obj/structure/cable,
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"N" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"O" = (
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/floor,
+/area/kobold/surface)
+"P" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"Q" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"S" = (
+/turf/simulated/wall/iron,
+/area/kobold/surface)
+"T" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"U" = (
+/turf/simulated/open,
+/area/kobold/surface)
+"W" = (
+/obj/machinery/power/tracker,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
+"X" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/kobold/surface)
+"Y" = (
+/obj/effect/landmark/start,
+/turf/simulated/floor/tiled/dark,
+/area/kobold/surface)
+"Z" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/planet/sand,
+/area/mine/explored)
 
 (1,1,1) = {"
 a
@@ -258,7 +561,7 @@ a
 a
 a
 a
-a
+d
 "}
 (2,1,1) = {"
 a
@@ -24548,7 +24851,7 @@ a
 a
 a
 a
-a
+W
 a
 a
 a
@@ -24805,7 +25108,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -25058,15 +25361,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+T
+A
+H
+z
+M
+H
+T
+A
 a
 a
 a
@@ -25315,15 +25618,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -25572,15 +25875,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -25829,15 +26132,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -26086,15 +26389,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -26343,15 +26646,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -26600,15 +26903,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -26857,15 +27160,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -27114,15 +27417,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -27371,15 +27674,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+H
+z
+A
+H
+z
+M
+H
+z
+A
 a
 a
 a
@@ -27629,13 +27932,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+p
+w
+w
+h
+w
+w
+Z
 a
 a
 a
@@ -27889,7 +28192,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -28146,7 +28449,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -28403,7 +28706,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -28660,7 +28963,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -28917,7 +29220,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -29174,7 +29477,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -29431,7 +29734,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -29688,7 +29991,7 @@ a
 a
 a
 a
-a
+N
 a
 a
 a
@@ -29944,11 +30247,11 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
+S
+b
+S
+S
+S
 a
 a
 a
@@ -30201,11 +30504,11 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
+S
+Q
+F
+E
+K
 a
 a
 a
@@ -30458,11 +30761,11 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
+S
+I
+B
+B
+K
 a
 a
 a
@@ -30715,12 +31018,12 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
+S
+s
+n
+n
+c
+y
 a
 a
 a
@@ -30968,16 +31271,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+S
+S
+K
+K
+S
+S
+S
+O
+S
+q
 a
 a
 a
@@ -31225,16 +31528,16 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+K
+B
+B
+B
+e
+P
+X
+f
+X
+G
 a
 a
 a
@@ -31482,15 +31785,15 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+K
+B
+B
+B
+B
+C
+S
+O
+K
 a
 a
 a
@@ -31739,13 +32042,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+K
+B
+B
+Y
+B
+C
+S
 a
 a
 a
@@ -31996,13 +32299,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+S
+B
+x
+B
+B
+C
+S
 a
 a
 a
@@ -32253,13 +32556,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+S
+B
+U
+t
+B
+g
+K
 a
 a
 a
@@ -32510,13 +32813,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+S
+K
+K
+S
+S
+K
+K
 a
 a
 a

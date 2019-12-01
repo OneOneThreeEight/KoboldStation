@@ -36,14 +36,21 @@
 
 	var/rigged = 0				// true if rigged to explode
 
-	var/obj/item/weapon/cell/cell
-	var/start_with_cell = TRUE	// if true, this fixture generates a very weak cell at roundstart
+	var/tmp/obj/item/weapon/cell/cell
+	var/start_with_cell = /obj/item/weapon/cell/device/emergency_light	// if true, this fixture generates a very weak cell at roundstart
+	var/start_charge
 	var/emergency_mode = FALSE	// if true, the light is in emergency mode.
 	var/no_emergency = FALSE	// if true, this light cannot enter emergency mode.
 
 	var/bulb_is_noisy = TRUE
 
-	var/previous_stat
+	var/tmp/previous_stat
+
+/obj/machinery/light/Write(var/savefile/S)
+	if(cell)
+		start_with_cell = cell.type
+		start_charge = (cell.charge / cell.maxcharge) * 100
+	. = ..()
 
 // the smaller bulb light fixture
 
@@ -106,16 +113,8 @@
 	if (!has_power())
 		stat |= NOPOWER
 	if (start_with_cell && !no_emergency)
-		cell = new /obj/item/weapon/cell/device/emergency_light(src)
-
-	if (mapload && loc && isNotAdminLevel(z))
-		switch(fitting)
-			if("tube")
-				if(prob(2))
-					broken(1)
-			if("bulb")
-				if(prob(5))
-					broken(1)
+		cell = new start_with_cell(src)
+		cell.charge = start_charge * cell.maxcharge / 100
 
 	update(0)
 

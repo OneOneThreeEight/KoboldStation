@@ -235,11 +235,10 @@ swapmap
 					var/turf/T=locate(x,y,z)
 					S["type"] << T.type
 					if(T.loc!=defarea) S["AREA"] << areas[T.loc]
-					//world.log << "Writing [T] at [T.x], [T.y], [T.z]"
 					T.Write(S)
 					S.cd=".."
 				S.cd=".."
-			CHECK_TICK
+			sleep()
 			S.cd=oldcd
 		locked=0
 		qdel(areas)
@@ -288,17 +287,17 @@ swapmap
 					else defarea.contents+=T
 					// clear the turf
 					for(var/obj/O in T)
-						CHECK_TICK
+						sleep()
 						qdel(O)
 					for(var/mob/M in T)
-						CHECK_TICK
+						sleep()
 						if(!M.key) qdel(M)
 						else M.loc=null
 					// finish the read
 					T.Read(S)
 					S.cd=".."
 				S.cd=".."
-			CHECK_TICK
+			sleep()
 			S.cd=oldcd
 		locked=0
 		qdel(areas)
@@ -386,8 +385,8 @@ swapmap
 	proc/Save()
 		if(id==src) return 0
 		var/savefile/S=mode?(new):new("map_[id].sav")
-		to_chat(S, src)
-		while(locked) CHECK_TICK
+		S << src
+		while(locked) sleep()
 		if(mode)
 			fdel("map_[id].txt")
 			S.ExportText("/","map_[id].txt")
@@ -605,7 +604,6 @@ proc/SwapMaps_CreateFromTemplate(template_id)
 	return M
 
 proc/SwapMaps_LoadChunk(chunk_id,turf/locorner)
-	set background = 1
 	var/swapmap/M=new
 	var/savefile/S
 	var/text=0
@@ -633,7 +631,6 @@ proc/SwapMaps_LoadChunk(chunk_id,turf/locorner)
 	return 1
 
 proc/SwapMaps_SaveChunk(chunk_id,turf/corner1,turf/corner2)
-	set background = 1
 	if(!corner1 || !corner2)
 		world.log <<  "SwapMaps error in SwapMaps_SaveChunk():"
 		if(!corner1) world.log <<  "  corner1 turf is null"

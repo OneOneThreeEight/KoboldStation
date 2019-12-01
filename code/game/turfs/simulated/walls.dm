@@ -25,7 +25,7 @@
 	var/tmp/image/damage_image
 	var/tmp/image/fake_wall_image
 	var/tmp/cached_adjacency
-	
+
 	var/materialtype
 	var/rmaterialtype
 

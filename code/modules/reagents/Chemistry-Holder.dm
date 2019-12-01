@@ -187,7 +187,7 @@
 			current.volume -= amount
 			current.add_thermal_energy( -(current.thermal_energy * (amount/old_volume)) )
 			update_holder(!safety)
-			return 1
+			return amount
 	return 0
 
 /datum/reagents/proc/del_reagent(var/id)

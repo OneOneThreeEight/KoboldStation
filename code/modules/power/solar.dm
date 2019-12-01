@@ -11,14 +11,14 @@
 	use_power = 0
 	idle_power_usage = 0
 	active_power_usage = 0
-	var/id = 0
+	var/tmp/id = 0
 	var/health = 10
 	var/obscured = 0
 	var/sunfrac = 0
 	var/adir = SOUTH // actual dir
 	var/ndir = SOUTH // target dir
 	var/turn_angle = 0
-	var/obj/machinery/power/solar_control/control = null
+	var/tmp/obj/machinery/power/solar_control/control = null
 
 /obj/machinery/power/solar/drain_power()
 	return -1
@@ -283,12 +283,12 @@
 	var/cdir = 0
 	var/targetdir = 0		// target angle in manual tracking (since it updates every game minute)
 	var/gen = 0
-	var/lastgen = 0
+	var/tmp/lastgen = 0
 	var/track = 0			// 0= off  1=timed  2=auto (tracker)
 	var/trackrate = 600		// 300-900 seconds
-	var/nexttime = 0		// time for a panel to rotate of 1° in manual tracking
-	var/obj/machinery/power/tracker/connected_tracker = null
-	var/list/connected_panels = list()
+	var/tmp/nexttime = 0		// time for a panel to rotate of 1° in manual tracking
+	var/tmp/obj/machinery/power/tracker/connected_tracker = null
+	var/tmp/list/connected_panels = list()
 
 /obj/machinery/power/solar_control/drain_power()
 	return -1

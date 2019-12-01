@@ -2,6 +2,99 @@
 "a" = (
 /turf/unsimulated/chasm_mask,
 /area/mine/unexplored)
+"o" = (
+/obj/structure/window/basic{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/kobold/mine)
+"r" = (
+/turf/simulated/wall/rusty,
+/area/kobold/mine)
+"s" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/machinery/light/small/emergency{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/kobold/mine)
+"v" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor,
+/area/kobold/mine)
+"w" = (
+/turf/simulated/wall/iron,
+/area/kobold/mine)
+"y" = (
+/turf/simulated/floor,
+/area/kobold/mine)
+"B" = (
+/obj/machinery/light/small/emergency{
+	dir = 1
+	},
+/obj/structure/closet/excavation,
+/turf/simulated/floor,
+/area/kobold/mine)
+"C" = (
+/obj/machinery/power/port_gen/fuel,
+/obj/structure/cable{
+	icon_state = "0-4";
+	d2 = 4
+	},
+/turf/simulated/floor,
+/area/kobold/mine)
+"F" = (
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/turf/simulated/floor,
+/area/kobold/mine)
+"H" = (
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor,
+/area/kobold/mine)
+"M" = (
+/obj/structure/stairs/north,
+/turf/simulated/floor,
+/area/kobold/mine)
+"T" = (
+/obj/structure/reagent_dispensers/extinguisher,
+/turf/simulated/floor,
+/area/kobold/mine)
+"V" = (
+/obj/structure/window/basic,
+/obj/machinery/light/small/emergency{
+	dir = 1
+	},
+/obj/structure/closet/firecloset/full,
+/turf/simulated/floor,
+/area/kobold/mine)
+"W" = (
+/obj/structure/cable{
+	d1 = 0;
+	d2 = 16;
+	dir = 1;
+	icon_state = "12-0"
+	},
+/obj/structure/cable,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/light/small/emergency{
+	icon_state = "bulb1";
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/kobold/mine)
 
 (1,1,1) = {"
 a
@@ -30968,13 +31061,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+r
+w
+w
+H
+w
+w
+w
 a
 a
 a
@@ -31225,13 +31318,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+r
+B
+y
+y
+y
+s
+r
 a
 a
 a
@@ -31482,13 +31575,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+r
+y
+y
+y
+y
+T
+r
 a
 a
 a
@@ -31739,13 +31832,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+w
+y
+y
+y
+y
+v
+r
 a
 a
 a
@@ -31996,13 +32089,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+w
+y
+o
+y
+y
+C
+w
 a
 a
 a
@@ -32253,13 +32346,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+w
+V
+M
+y
+F
+W
+w
 a
 a
 a
@@ -32510,13 +32603,13 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+w
+w
+r
+r
+r
+r
+w
 a
 a
 a

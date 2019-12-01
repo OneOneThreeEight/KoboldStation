@@ -818,14 +818,17 @@
 
 /datum/controller/subsystem/jobs/proc/get_roundstart_spawnpoint(var/rank)
 	var/list/loc_list = list()
+	var/list/backup_locs = list()
 	for(var/obj/effect/landmark/start/sloc in landmarks_list)
+		if(sloc.name == "start")
+			backup_locs += sloc
 		if(sloc.name != rank)	continue
 		if(locate(/mob/living) in sloc.loc)	continue
 		loc_list += sloc
-	if(loc_list.len)
+	if(LAZYLEN(loc_list))
 		return pick(loc_list)
 	else
-		return locate("start*[rank]") // use old stype
+		return locate("start*[rank]") || locate("start*start") // use old stype; if that fails, use any generic one
 
 /datum/controller/subsystem/jobs/proc/GetFaction(mob/living/carbon/human/H)
 	var/faction_name = H?.client?.prefs?.faction

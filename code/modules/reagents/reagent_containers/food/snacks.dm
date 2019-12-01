@@ -598,7 +598,7 @@
 	name = "jelly donut"
 	desc = "You jelly?"
 	icon_state = "jdonut1"
-	filling_color = "#ED1169"	
+	filling_color = "#ED1169"
 	bitesize = 5
 	reagents_to_add = list(NUTRIMENT_GOOD = 3, "sprinkles" = 1, "berryjuice" = 5)
 	reagent_data = list(NUTRIMENT_GOOD = list("sweetness" = 1, "donut" = 2))
@@ -942,7 +942,7 @@
 	reagents_to_add = list(NUTRIMENT_GOOD = 4, "cheese" = 2)
 	reagent_data = list(NUTRIMENT_GOOD = list("bun" = 2))
 
-/obj/item/weapon/reagent_containers/food/snacks/burger/monkey
+/obj/item/weapon/reagent_containers/food/snacks/burger/meat
 	name = "burger"
 	desc = "The cornerstone of every nutritious breakfast."
 	icon_state = "hburger"
@@ -969,61 +969,6 @@
 	center_of_mass = list("x"=16, "y"=10)
 	reagents_to_add = list(NUTRIMENT_GOOD = 3, "tofu" = 3)
 	reagent_data = list(NUTRIMENT_GOOD = list("bun" = 2))
-	bitesize = 2
-
-/obj/item/weapon/reagent_containers/food/snacks/burger/robo
-	name = "roburger"
-	desc = "The lettuce is the only organic component. Beep."
-	icon_state = "roburger"
-	filling_color = "#CCCCCC"
-	center_of_mass = list("x"=16, "y"=11)
-	reagents_to_add = list(NUTRIMENT_GOOD = 2)
-	reagent_data = list(NUTRIMENT_GOOD = list("bun" = 2, "metal" = 3))
-	bitesize = 2
-
-/obj/item/weapon/reagent_containers/food/snacks/burger/robo/Initialize()
-	. = ..()
-	if(prob(5))
-		reagents.add_reagent("nanites", 2)
-
-/obj/item/weapon/reagent_containers/food/snacks/burger/robobig
-	name = "roburger"
-	desc = "This massive patty looks like poison. Beep."
-	icon_state = "roburger"
-	filling_color = "#CCCCCC"
-	volume = 100
-	center_of_mass = list("x"=16, "y"=11)
-	bitesize = 0.1
-	reagents_to_add = list(NUTRIMENT_GOOD = 3, "nanites" = 100)
-	reagent_data = list(NUTRIMENT_GOOD = list("bun" = 2, "metal" = 3))
-
-/obj/item/weapon/reagent_containers/food/snacks/burger/xeno
-	name = "xenoburger"
-	desc = "Smells caustic. Tastes like heresy."
-	icon_state = "xburger"
-	filling_color = "#43DE18"
-	center_of_mass = list("x"=16, "y"=11)
-	bitesize = 2
-	reagents_to_add = list("protein" = 8)
-
-/obj/item/weapon/reagent_containers/food/snacks/burger/clown
-	name = "clown burger"
-	desc = "This tastes funny..."
-	icon_state = "clownburger"
-	filling_color = "#FF00FF"
-	center_of_mass = list("x"=17, "y"=12)
-	reagents_to_add = list(NUTRIMENT_GOOD = 6)
-	reagent_data = list(NUTRIMENT_GOOD = list("bun" = 2, "crayons" = 3))
-	bitesize = 2
-
-/obj/item/weapon/reagent_containers/food/snacks/burger/mime
-	name = "mime burger"
-	desc = "Its taste defies language."
-	icon_state = "mimeburger"
-	filling_color = "#FFFFFF"
-	center_of_mass = list("x"=16, "y"=11)
-	reagents_to_add = list(NUTRIMENT_GOOD = 6)
-	reagent_data = list(NUTRIMENT_GOOD = list("bun" = 2, "paint" = 3))
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/burger/mouse
@@ -3421,7 +3366,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=17)
 	reagents_to_add = list("protein" = 6)
-	
+
 /obj/item/weapon/reagent_containers/food/snacks/flatbread
 	name = "flatbread"
 	desc = "Bland but filling, like a well-endowed Loamer."

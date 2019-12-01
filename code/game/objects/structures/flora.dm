@@ -5,7 +5,27 @@
 	density = 1
 	pixel_x = -16
 	layer = 9
+	var/tmp/being_cut = FALSE
 
+/obj/structure/flora/tree/attackby(obj/item/W, mob/user)
+	if(W.edge || W.sharp && W.force > 12)
+		if(being_cut)
+			return
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN * (12/W.force))
+		being_cut = TRUE
+		user.visible_message("<span class='notice'>\The [user] begins to chop down \the [src].</span>")
+		user.do_attack_animation(src)
+		animate_shake()
+		if(do_after(user, 20 * (12/W.force), act_target = src))
+			user.visible_message("<span class='notice'>\The [user] chops down \the [src].</span>")
+			playsound(loc, 'sound/effects/woodcutting.ogg', 50, 1)
+			var/obj/item/stack/material/wood/T = new(src.loc)
+			T.amount = 8
+			qdel(src)
+			return
+		being_cut = FALSE
+		return ..()
+	. = ..()
 /obj/structure/flora/tree/pine
 	name = "pine tree"
 	icon = 'icons/obj/flora/pinetrees.dmi'

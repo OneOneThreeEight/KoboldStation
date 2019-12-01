@@ -14,7 +14,7 @@
 
 	var/id = 0
 	var/sun_angle = 0		// sun angle as set by sun datum
-	var/obj/machinery/power/solar_control/control = null
+	var/tmp/obj/machinery/power/solar_control/control = null
 
 /obj/machinery/power/tracker/Initialize(mapload, obj/item/solar_assembly/S)
 	. = ..()

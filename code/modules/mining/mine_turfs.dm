@@ -31,19 +31,20 @@ var/list/mineral_can_smooth_with = list(
 	smooth = SMOOTH_MORE | SMOOTH_BORDER | SMOOTH_NO_CLEAR_ICON
 	smoothing_hints = SMOOTHHINT_CUT_F | SMOOTHHINT_ONLY_MATCH_TURF | SMOOTHHINT_TARGETS_NOT_UNIQUE
 
-	oxygen = 0
-	nitrogen = 0
+	oxygen = MOLES_OXYGEN_NAARVAT
+	nitrogen = MOLES_NITROGEN_NAARVAT
+	carbon_dioxide = MOLES_CARBONDIOXIDE_NAARVAT
+	temperature = TEMPERATURE_NAARVAT
 	opacity = 1
 	density = 1
 	blocks_air = 1
-	temperature = T0C
-	var/mined_turf = /turf/unsimulated/floor/asteroid/ash/rocky
+	var/mined_turf = /turf/simulated/floor/planet/sand/rocky
 	var/ore/mineral
 	var/mined_ore = 0
-	var/last_act = 0
+	var/tmp/last_act = 0
 	var/emitter_blasts_taken = 0 // EMITTER MINING! Muhehe.
 
-	var/datum/geosample/geologic_data
+	var/tmp/datum/geosample/geologic_data
 	var/excavation_level = 0
 	var/list/finds
 	var/archaeo_overlay = ""
