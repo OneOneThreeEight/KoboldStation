@@ -70,7 +70,7 @@
 		/obj/item/weapon/pickaxe/borgdrill
 	))
 	var/static/list/pen_tools = typecacheof(list(
-		/obj/item/weapon/pickaxe/diamonddrillm
+		/obj/item/weapon/pickaxe/diamonddrill,
 		/obj/item/weapon/pickaxe/drill,
 		/obj/item/weapon/pickaxe/borgdrill
 	))
