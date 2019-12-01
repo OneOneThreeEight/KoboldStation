@@ -29,6 +29,9 @@
 
 /datum/map/kobold/generate_asteroid()
 	// Create the desert.
+	new /datum/random_map/noise/ore/surface(null, 0, 0, 3, 255, 255)				//low ore chance
+	new /datum/random_map/noise/ore(null, 0, 0, 2, 255, 255)						//normal ore chance
+	new /datum/random_map/noise/ore/deep(null, 0, 0, 1, 255, 255)					//high ore chance
 	if(SSatlas.loaded_save)
 		return
 	new /datum/random_map/noise/desert(null, 0, 0, 3, 255, 255)

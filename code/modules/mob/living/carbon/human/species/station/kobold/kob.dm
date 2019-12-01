@@ -33,7 +33,7 @@
     sprint_cost_factor = 1.45
     exhaust_threshold = 65
     rarity_value = 3
-    mob_size = 5
+    mob_size = 7
     climb_coeff = 1.35
 
     blurb = "TODO"

@@ -43,6 +43,8 @@
 	var/race_key = 0       	                             // Used for mob icon cache string.
 	var/icon/icon_template                               // Used for mob icon generation for non-32x32 species.
 	var/mob_size	= MOB_MEDIUM
+	var/size_multiplier_x = 1
+	var/size_multiplier_y = 1
 	var/show_ssd = "fast asleep"
 	var/virus_immune
 	var/short_sighted
@@ -378,6 +380,8 @@
 	H.mob_size = mob_size
 	H.mouth_size = mouth_size || 2
 	H.eat_types = allowed_eat_types
+	H.size_multiplier_x = size_multiplier_x
+	H.size_multiplier_y = size_multiplier_y
 	if(!kpg)
 		if(islesserform(H))
 			H.dna.SetSEState(MONKEYBLOCK,1)
