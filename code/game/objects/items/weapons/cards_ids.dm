@@ -100,7 +100,8 @@ var/const/NO_EMAG_ACT = -50
 
 	var/list/access = list()
 	var/registered_name = "Unknown" // The name registered_name on the card
-	var/mob/living/carbon/human/mob
+	var/player_ckey
+	var/tmp/mob/living/carbon/human/mob
 	slot_flags = SLOT_ID
 
 	var/age = "\[UNSET\]"
@@ -121,6 +122,10 @@ var/const/NO_EMAG_ACT = -50
 	var/assignment = null	//can be alt title or the actual job
 	var/rank = null			//actual job
 	var/dorm = 0			// determines if this ID has claimed a dorm already
+
+/obj/item/weapon/card/id/Write(var/savefile/S)
+	player_ckey = lowertext(mob?.mind?.key)
+	. = ..()
 
 /obj/item/weapon/card/id/Destroy()
 	mob = null
@@ -153,6 +158,7 @@ var/const/NO_EMAG_ACT = -50
 	side.Scale(128, 128)
 
 /mob/proc/set_id_info(var/obj/item/weapon/card/id/id_card)
+	id_card.player_ckey = lowertext(src?.mind?.key)
 	id_card.age = 0
 	id_card.registered_name		= real_name
 	id_card.sex 				= capitalize(gender)
@@ -190,6 +196,9 @@ var/const/NO_EMAG_ACT = -50
 	return dat
 
 /obj/item/weapon/card/id/attack_self(mob/user as mob)
+	if (lowertext(user?.mind?.key) == player_ckey)
+		to_chat(user, span("notice", "You re-activate your ID using your biometric credentials."))
+		mob = src
 	if (dna_hash == "\[UNSET\]" && ishuman(user))
 		var/response = alert(user, "This ID card has not been imprinted with biometric data. Would you like to imprint yours now?", "Biometric Imprinting", "Yes", "No")
 		if (response == "Yes")
@@ -198,13 +207,7 @@ var/const/NO_EMAG_ACT = -50
 				to_chat(user, "<span class='warning'>You cannot imprint [src] while wearing \the [H.gloves].</span>")
 				return
 			else
-				mob = H
-				blood_type = H.dna.b_type
-				dna_hash = H.dna.unique_enzymes
-				fingerprint_hash = md5(H.dna.uni_identity)
-				citizenship = H.citizenship
-				religion = SSrecords.get_religion_record_name(H.religion)
-				age = H.age
+				H.set_id_info(src)
 				to_chat(user, "<span class='notice'>Biometric Imprinting successful!</span>")
 				return
 
@@ -251,19 +254,14 @@ var/const/NO_EMAG_ACT = -50
 					to_chat(user, "<span class='warning'>They don't have any hands.</span>")
 					return 1
 				user.visible_message("[user] imprints [src] with \the [H]'s biometrics.")
-				mob = H
-				blood_type = H.dna.b_type
-				dna_hash = H.dna.unique_enzymes
-				fingerprint_hash = md5(H.dna.uni_identity)
-				citizenship = H.citizenship
-				religion = H.religion
-				age = H.age
-				src.add_fingerprint(H)
+				H.set_id_info(src)
 				to_chat(user, "<span class='notice'>Biometric Imprinting Successful!.</span>")
 				return 1
 	return ..()
 
 /obj/item/weapon/card/id/GetAccess()
+	if(!mob)
+		return list() // this card is from an old shift and needs to be reactivated
 	return access
 
 /obj/item/weapon/card/id/GetID()

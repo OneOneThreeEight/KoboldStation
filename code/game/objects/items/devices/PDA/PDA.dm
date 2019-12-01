@@ -17,11 +17,11 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/owner = null
 	var/default_cartridge = 0 // Access level defined by cartridge
 	var/obj/item/weapon/cartridge/cartridge = null //current cartridge
-	var/mode = 0 //Controls what menu the PDA will display. 0 is hub; the rest are either built in or based on cartridge.
+	var/tmp/mode = 0 //Controls what menu the PDA will display. 0 is hub; the rest are either built in or based on cartridge.
 
-	var/lastmode = 0
-	var/ui_tick = 0
-	var/nanoUI[0]
+	var/tmp/lastmode = 0
+	var/tmp/ui_tick = 0
+	var/tmp/nanoUI[0]
 
 	//Secondary variables
 	var/scanmode = 0 //1 is medical scanner, 2 is forensics, 3 is reagent scanner.
@@ -44,16 +44,16 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/detonate = 1 // Can the PDA be blown up?
 	var/hidden = 0 // Is the PDA hidden from the PDA list?
 	var/has_pen = 1 // Does the PDA have a pen + penslot?
-	var/active_conversation = null // New variable that allows us to only view a single conversation.
-	var/list/conversations = list()    // For keeping up with who we have PDA messsages from.
+	var/tmp/active_conversation = null // New variable that allows us to only view a single conversation.
+	var/tmp/list/conversations = list()    // For keeping up with who we have PDA messsages from.
 	var/new_message = 0			//To remove hackish overlay check
 	var/new_news = 0
 	var/pdafilter = 0			//0-all,1-synth,2-command,3-sec,4-eng,5-sci,6-cargo,7-service,8-med
 
-	var/active_feed				// The selected feed
-	var/list/warrant			// The warrant as we last knew it
-	var/list/feeds = list()		// The list of feeds as we last knew them
-	var/list/feed_info = list()	// The data and contents of each feed as we last knew them
+	var/tmp/active_feed				// The selected feed
+	var/tmp/list/warrant			// The warrant as we last knew it
+	var/tmp/list/feeds = list()		// The list of feeds as we last knew them
+	var/tmp/list/feed_info = list()	// The data and contents of each feed as we last knew them
 
 	var/list/cartmodes = list(40, 42, 43, 433, 44, 441, 45, 451, 46, 48, 47, 49) // If you add more cartridge modes add them to this list as well.
 	var/list/no_auto_update = list(1, 40, 43, 44, 441, 45, 451)		     // These modes we turn off autoupdate
@@ -63,10 +63,8 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/ownjob = null //related to above - this is assignment (potentially alt title)
 	var/ownrank = null // this one is rank, never alt title
 
-	var/obj/item/device/paicard/pai = null	// A slot for a personal AI device
-
 	var/obj/item/weapon/pen/pen
-	var/list/obj/machinery/requests_console/linked_consoles
+	var/tmp/list/obj/machinery/requests_console/linked_consoles
 
 	var/flippable = 1
 	var/flipped = 0
