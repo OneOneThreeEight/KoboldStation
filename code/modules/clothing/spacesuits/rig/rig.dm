@@ -53,7 +53,7 @@
 	var/obj/item/rig_module/selected_module = null            // Primary system (used with middle-click)
 	var/obj/item/rig_module/vision/visor                      // Kinda shitty to have a var for a module, but saves time.
 	var/obj/item/rig_module/voice/speech                      // As above.
-	var/mob/living/carbon/human/wearer                        // The person currently wearing the rig.
+	var/tmp/mob/living/carbon/human/wearer                    // The person currently wearing the rig.
 	var/image/mob_icon                                        // Holder for on-mob icon.
 	var/list/installed_modules = list()                       // Power consumption/use bookkeeping.
 
@@ -81,8 +81,8 @@
 	var/emp_protection = 0
 
 	// Wiring! How exciting.]
-	var/datum/wires/rig/wires
-	var/datum/effect_system/sparks/spark_system
+	var/tmp/datum/wires/rig/wires
+	var/tmp/datum/effect_system/sparks/spark_system
 
 	var/allowed_module_types = MODULE_GENERAL // All rigs by default should have access to general
 	var/list/species_restricted = list("Human","Tajara","Unathi", "Skrell", "Machine")

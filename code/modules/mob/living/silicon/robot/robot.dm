@@ -24,7 +24,7 @@
 	var/crisis_override = 0
 	var/malfAImodule = 0
 	var/integrated_light_power = 4
-	var/datum/wires/robot/wires
+	var/tmp/datum/wires/robot/wires
 	var/overclocked = 0 // cyborg controls if they enable the overclock
 	var/overclockavailable = 0 // if the overclock is available for use
 

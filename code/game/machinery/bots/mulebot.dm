@@ -51,7 +51,7 @@
 						// the installed power cell
 
 	// constants for internal wiring bitflags
-	var/datum/wires/mulebot/wires = null
+	var/tmp/datum/wires/mulebot/wires = null
 
 	var/bloodiness = 0		// count of bloodiness
 	var/static/total_mules = 0

@@ -21,7 +21,7 @@
 	var/mat_efficiency = 1
 	var/build_time = 50
 
-	var/datum/wires/autolathe/wires
+	var/tmp/datum/wires/autolathe/wires
 
 	component_types = list(
 		/obj/item/weapon/circuitboard/autolathe,

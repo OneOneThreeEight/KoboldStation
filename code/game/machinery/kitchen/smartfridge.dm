@@ -35,7 +35,7 @@
 		/obj/item/weapon/stock_parts/manipulator
 	)
 
-	var/datum/wires/smartfridge/wires = null
+	var/tmp/datum/wires/smartfridge/wires = null
 	atmos_canpass = CANPASS_NEVER
 
 /obj/machinery/smartfridge/secure

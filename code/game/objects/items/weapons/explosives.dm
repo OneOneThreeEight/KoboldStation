@@ -8,7 +8,7 @@
 	flags = NOBLUDGEON
 	w_class = 2.0
 	origin_tech = list(TECH_ILLEGAL = 2)
-	var/datum/wires/explosive/c4/wires = null
+	var/tmp/datum/wires/explosive/c4/wires = null
 	var/timer = 10
 	var/atom/target = null
 	var/open_panel = 0

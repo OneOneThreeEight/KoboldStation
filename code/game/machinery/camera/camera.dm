@@ -20,7 +20,7 @@
 	var/toughness = 5 //sorta fragile
 
 	// WIRES
-	var/datum/wires/camera/wires = null // Wires datum
+	var/tmp/datum/wires/camera/wires = null // Wires datum
 
 	//OTHER
 

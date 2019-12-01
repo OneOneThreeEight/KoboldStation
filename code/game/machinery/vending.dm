@@ -95,7 +95,7 @@
 
 	var/scan_id = 1
 	var/obj/item/weapon/coin/coin
-	var/datum/wires/vending/wires = null
+	var/tmp/datum/wires/vending/wires = null
 
 	var/can_move = 1	//if you can wrench the machine out of place
 	var/vend_id = "generic"	//Id of the refill cartridge that has to be used

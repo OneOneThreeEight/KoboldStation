@@ -56,7 +56,7 @@
 	var/shorted = 0
 	var/highpower = 0	// if true, power usage & temperature regulation power is increased
 
-	var/datum/wires/alarm/wires
+	var/tmp/datum/wires/alarm/wires
 
 	var/mode = AALARM_MODE_SCRUBBING
 	var/screen = AALARM_SCREEN_MAIN

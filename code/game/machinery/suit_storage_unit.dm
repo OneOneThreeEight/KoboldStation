@@ -617,7 +617,7 @@
 	var/obj/item/clothing/suit/space/void/suit = null
 	var/obj/item/clothing/head/helmet/space/helmet = null
 
-	var/datum/wires/suit_storage_unit/wires = null
+	var/tmp/datum/wires/suit_storage_unit/wires = null
 
 /obj/machinery/suit_cycler/Initialize()
 	. = ..()
