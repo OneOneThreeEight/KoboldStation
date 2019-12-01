@@ -20,7 +20,7 @@
 	var/list/sprite_sheets_refit = null
 
 	//material things
-	var/material/material = null
+	var/tmp/material/material = null
 	var/applies_material_color = TRUE
 	var/unbreakable = FALSE
 	var/default_material = null // Set this to something else if you want material attributes on init.
@@ -34,6 +34,11 @@
 		material_key = default_material
 	if(material_key) // May still be null if a material was not specified as a default.
 		set_material(material_key)
+
+/obj/item/clothing/Write(var/savefile/S)
+	if(material)
+		default_material = material.name
+	. = ..()
 
 /obj/item/clothing/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
