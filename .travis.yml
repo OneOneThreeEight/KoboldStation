@@ -10,9 +10,7 @@ env:
     NODE_VERSION=10
     RUST_G_VERSION="0.4.1"
   matrix:
-    - USE_MAP=aurora
-    - USE_MAP=runtime
-    - USE_MAP=exodus
+    - USE_MAP=kobold
 
 cache:
   directories:
