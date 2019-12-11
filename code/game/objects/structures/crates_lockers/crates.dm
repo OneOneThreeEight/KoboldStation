@@ -623,6 +623,24 @@
 //		new /obj/item/weapon/pestspray(src)
 //		new /obj/item/weapon/pestspray(src)
 
+/obj/structure/closet/crate/hydroponics/narvat/fill()
+	new /obj/item/weapon/reagent_containers/spray/plantbgone(src)
+	new /obj/item/weapon/reagent_containers/spray/plantbgone(src)
+	new /obj/item/weapon/material/minihoe(src)
+	new /obj/item/weapon/wirecutters/clippers(src)
+	new /obj/item/seeds/nettleseed(src)
+	new /obj/item/seeds/potatoseed(src)
+	new /obj/item/seeds/soyaseed(src)
+	new /obj/item/seeds/wheatseed(src)
+	new /obj/item/seeds/whitebeetseed(src)
+	new /obj/item/seeds/tomatoseed(src)
+	new /obj/item/seeds/peanutseed(src)
+	new /obj/item/seeds/cocoapodseed(src)
+	for(var/i=1, i==10, i++)
+		var/seedtype = pick(subtypesof(/obj/item/seeds))
+		new seedtype(src)
+
+
 
 
 //A crate that populates itself with randomly selected loot from randomstock.dm

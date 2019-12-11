@@ -1,6 +1,6 @@
 /datum/map/kobold
-	name = "Närvat"
-	full_name = "Närvat"
+	name = "Naarvat"
+	full_name = "Naarvat"
 	path = "kobold"
 
 	lobby_screens = list("aurora_asteroid", "aurora_postcard")
@@ -20,7 +20,7 @@
 
 	has_space_ruins = FALSE
 
-	station_name = "TK-9584 \'Närvat\'"
+	station_name = "TK-9584 \'Naarvat\'"
 	station_short = "Naarvat"
 	system_name = "TK"
 

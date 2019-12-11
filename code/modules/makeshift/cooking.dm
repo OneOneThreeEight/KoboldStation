@@ -77,6 +77,10 @@
 		I.use(1)
 		fuel = min(fuel + 200, max_fuel)
 		to_chat(user, "<span class='notice'>You add some of \the [I] to \the [src].</span>")
+	if(istype(W, /obj/item/weapon/ore/coal) && (fuel < max_fuel))
+		fuel = min(fuel + 300, max_fuel)
+		to_chat(user, span("notice", "You add some of \the [W] to \the [src]."))
+		qdel(W)
 
 	if(istype(W, /obj/item/weapon/reagent_containers/cooking_container/fire))
 		cook_machine.attackby(W, user)

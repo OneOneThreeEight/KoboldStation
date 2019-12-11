@@ -66,7 +66,7 @@
 	external_pressure_bound_default = 0
 	internal_pressure_bound = 2000
 	internal_pressure_bound_default = 2000
-	pressure_checks = 2
+	pressure_checks = PRESSURE_CHECK_INTERNAL
 	pressure_checks_default = 2
 
 /obj/machinery/atmospherics/unary/vent_pump/Initialize()

@@ -2,12 +2,55 @@
 "a" = (
 /turf/unsimulated/chasm_mask,
 /area/mine/unexplored)
+"f" = (
+/turf/unsimulated/chasm_mask,
+/turf/simulated/floor/planet/sand/rocky,
+/area/mine/unexplored)
+"g" = (
+/obj/item/hoist_kit,
+/turf/simulated/floor,
+/area/kobold/mine)
+"h" = (
+/obj/machinery/mineral/output,
+/obj/machinery/mineral/stacking_unit_console{
+	pixel_y = -32
+	},
+/turf/simulated/floor,
+/area/kobold/mine)
+"i" = (
+/obj/machinery/mineral/output,
+/obj/machinery/mineral/input,
+/turf/simulated/floor,
+/area/kobold/mine)
+"j" = (
+/obj/machinery/mineral/processing_unit,
+/turf/simulated/floor,
+/area/kobold/mine)
+"k" = (
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos,
+/turf/simulated/floor,
+/area/kobold/mine)
+"n" = (
+/obj/machinery/mineral/input,
+/obj/machinery/mineral/processing_unit_console{
+	pixel_y = 32
+	},
+/turf/simulated/floor,
+/area/kobold/mine)
 "o" = (
 /obj/structure/window/basic{
 	dir = 4
 	},
 /turf/simulated/floor,
 /area/kobold/mine)
+"q" = (
+/turf/unsimulated/chasm_mask,
+/obj/machinery/atmospherics/pipe/vent/high_volume{
+	icon_state = "intact";
+	dir = 4
+	},
+/turf/simulated/floor/planet/sand/rocky,
+/area/mine/unexplored)
 "r" = (
 /turf/simulated/wall/rusty,
 /area/kobold/mine)
@@ -35,11 +78,10 @@
 /obj/structure/closet/excavation,
 /turf/simulated/floor,
 /area/kobold/mine)
-"C" = (
-/obj/machinery/power/port_gen/fuel,
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+"E" = (
+/obj/machinery/atmospherics/trinary/filter/m_filter{
+	icon_state = "mmap";
+	dir = 1
 	},
 /turf/simulated/floor,
 /area/kobold/mine)
@@ -58,10 +100,28 @@
 /area/kobold/mine)
 "H" = (
 /obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	icon_state = "intact";
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/kobold/mine)
+"K" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
 /turf/simulated/floor,
 /area/kobold/mine)
 "M" = (
 /obj/structure/stairs/north,
+/turf/simulated/floor,
+/area/kobold/mine)
+"N" = (
+/obj/machinery/autolathe,
+/turf/simulated/floor,
+/area/kobold/mine)
+"R" = (
+/obj/machinery/mineral/stacking_machine,
 /turf/simulated/floor,
 /area/kobold/mine)
 "T" = (
@@ -84,17 +144,20 @@
 	icon_state = "12-0"
 	},
 /obj/structure/cable,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/machinery/light/small/emergency{
 	icon_state = "bulb1";
 	dir = 4
 	},
 /turf/simulated/floor,
 /area/kobold/mine)
+"Z" = (
+/turf/unsimulated/chasm_mask,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	icon_state = "intact";
+	dir = 8
+	},
+/turf/simulated/floor/planet/sand/rocky,
+/area/mine/unexplored)
 
 (1,1,1) = {"
 a
@@ -30550,7 +30613,7 @@ a
 a
 a
 a
-a
+q
 a
 a
 a
@@ -30807,8 +30870,8 @@ a
 a
 a
 a
-a
-a
+Z
+f
 a
 a
 a
@@ -31320,9 +31383,9 @@ a
 a
 r
 B
-y
-y
-y
+k
+E
+K
 s
 r
 a
@@ -31833,16 +31896,16 @@ a
 a
 a
 w
-y
+N
 y
 y
 y
 v
 r
-a
-a
-a
-a
+r
+r
+w
+w
 a
 a
 a
@@ -32090,16 +32153,16 @@ a
 a
 a
 w
-y
+g
 o
 y
 y
-C
+y
+y
+y
+y
+y
 w
-a
-a
-a
-a
 a
 a
 a
@@ -32353,10 +32416,10 @@ y
 F
 W
 w
-a
-a
-a
-a
+n
+r
+h
+w
 a
 a
 a
@@ -32610,10 +32673,10 @@ r
 r
 r
 w
-a
-a
-a
-a
+j
+i
+R
+w
 a
 a
 a
@@ -32866,11 +32929,11 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
+w
+w
+w
+w
+w
 a
 a
 a
