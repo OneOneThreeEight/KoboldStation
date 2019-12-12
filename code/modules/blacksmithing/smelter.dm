@@ -49,7 +49,7 @@
 		return
 
 
-	if(istype(W,/obj/item/weapon/ore/coal) && (fuel < max_fuel))
+	if(istype(W,/obj/item/ore/coal) && (fuel < max_fuel))
 		fuel = min(fuel + 1, max_fuel)
 		to_chat(user, "<span class='notice'>You fuel \the [src] with \the [W].</span>")
 		qdel(W)
@@ -87,8 +87,8 @@
 		addtimer(CALLBACK(src, .proc/smelt, current_mold, I.material), 3 MINUTES)
 		return
 
-	if (istype(W, /obj/item/weapon/ore) && (!istype(W, /obj/item/weapon/ore/coal)))
-		var/obj/item/weapon/ore/I = W
+	if (istype(W, /obj/item/ore) && (!istype(W, /obj/item/ore/coal)))
+		var/obj/item/ore/I = W
 
 		if(smelting)
 			to_chat(user, "<span class='warning'>\The [src] is already smelting something.</span>")

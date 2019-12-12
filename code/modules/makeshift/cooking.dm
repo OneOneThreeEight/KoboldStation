@@ -51,14 +51,14 @@
 		else
 			..()
 
-/obj/structure/bonfire/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/bonfire/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 	if(W.iswelder())
-		var/obj/item/weapon/weldingtool/WT = W
+		var/obj/item/weldingtool/WT = W
 		if(WT.isOn())
 			light(user)
-	else if(istype(W, /obj/item/weapon/flame/candle))
-		var/obj/item/weapon/flame/candle/C = W
+	else if(istype(W, /obj/item/flame/candle))
+		var/obj/item/flame/candle/C = W
 		if(C.lit)
 			light(user)
 		else if(on_fire && !C.lit)
@@ -77,12 +77,12 @@
 		I.use(1)
 		fuel = min(fuel + 200, max_fuel)
 		to_chat(user, "<span class='notice'>You add some of \the [I] to \the [src].</span>")
-	if(istype(W, /obj/item/weapon/ore/coal) && (fuel < max_fuel))
+	if(istype(W, /obj/item/ore/coal) && (fuel < max_fuel))
 		fuel = min(fuel + 300, max_fuel)
 		to_chat(user, span("notice", "You add some of \the [W] to \the [src]."))
 		qdel(W)
 
-	if(istype(W, /obj/item/weapon/reagent_containers/cooking_container/fire))
+	if(istype(W, /obj/item/reagent_containers/cooking_container/fire))
 		cook_machine.attackby(W, user)
 
 /obj/structure/bonfire/proc/light(mob/user)
@@ -211,10 +211,10 @@
 // COOKING //
 /////////////
 
-/obj/item/weapon/reagent_containers/cooking_container/fire/
+/obj/item/reagent_containers/cooking_container/fire/
 	var/appliancetype
 
-/obj/item/weapon/reagent_containers/cooking_container/fire/pot
+/obj/item/reagent_containers/cooking_container/fire/pot
 	name = "pot"
 	shortname = "pot"
 	desc = "Chuck ingredients in this to cook something over a fire."
@@ -223,12 +223,12 @@
 	appliancetype = POT
 
 
-/obj/item/weapon/reagent_containers/cooking_container/fire/pot/New(var/newloc, var/mat_key)
+/obj/item/reagent_containers/cooking_container/fire/pot/New(var/newloc, var/mat_key)
 	..(newloc)
 	var/material/material = get_material_by_name(mat_key ? mat_key : "iron")
 	name = "[material.display_name] [initial(name)]"
 
-/obj/item/weapon/reagent_containers/cooking_container/fire/oven
+/obj/item/reagent_containers/cooking_container/fire/oven
 	name = "campfire oven"
 	shortname = "oven"
 	desc = "Chuck ingredients in this to bake something over a fire."
@@ -236,12 +236,12 @@
 	icon_state = "dutchoven"
 	appliancetype = OVEN
 
-/obj/item/weapon/reagent_containers/cooking_container/fire/oven/New(var/newloc, var/mat_key)
+/obj/item/reagent_containers/cooking_container/fire/oven/New(var/newloc, var/mat_key)
 	..(newloc)
 	var/material/material = get_material_by_name(mat_key ? mat_key : "iron")
 	name = "[material.display_name] [initial(name)]"
 
-/obj/item/weapon/reagent_containers/cooking_container/fire/skewer
+/obj/item/reagent_containers/cooking_container/fire/skewer
 	name = "wooden skewer"
 	shortname = "skewer"
 	desc = "Not a kebab, so don't remove it."
@@ -250,18 +250,18 @@
 	item_state = "rods"
 	appliancetype = SKEWER
 
-/obj/item/weapon/material/shaft/attackby(var/obj/item/I, mob/user as mob)
-	if(istype(I, /obj/item/weapon/reagent_containers/food/snacks))
-		var/obj/item/weapon/reagent_containers/cooking_container/fire/skewer/S = new ()
+/obj/item/material/shaft/attackby(var/obj/item/I, mob/user as mob)
+	if(istype(I, /obj/item/reagent_containers/food/snacks))
+		var/obj/item/reagent_containers/cooking_container/fire/skewer/S = new ()
 		if (!user || !user.put_in_hands(S))
 			S.forceMove(get_turf(user ? user : src))
 		qdel(src)
 		S.attackby(I, user)
 
-/obj/item/weapon/reagent_containers/cooking_container/fire/skewer/do_empty(mob/user)
+/obj/item/reagent_containers/cooking_container/fire/skewer/do_empty(mob/user)
 	. = ..()
 	if(!contents.len)
-		var/obj/item/weapon/material/shaft/S = new ()
+		var/obj/item/material/shaft/S = new ()
 		if (!user || !user.put_in_hands(S))
 			S.forceMove(get_turf(user ? user : src))
 		qdel(src)
@@ -279,7 +279,7 @@
 	mobdamagetype = BURN
 	cooking_power = 0.75
 	max_contents = 5
-	container_type = /obj/item/weapon/reagent_containers/cooking_container/fire
+	container_type = /obj/item/reagent_containers/cooking_container/fire
 
 /obj/machinery/appliance/bonfire/Initialize()
 	. = ..()
@@ -303,9 +303,9 @@
 	var/atom/C = null
 	if (CI.container)
 		C = CI.container
-	if(!istype(CI.container, /obj/item/weapon/reagent_containers/cooking_container/fire))
+	if(!istype(CI.container, /obj/item/reagent_containers/cooking_container/fire))
 		return
-	var/obj/item/weapon/reagent_containers/cooking_container/fire/F = CI.container
+	var/obj/item/reagent_containers/cooking_container/fire/F = CI.container
 	if(F.appliancetype)
 		recipe = select_recipe(RECIPE_LIST(F.appliancetype), C)
 	if (recipe)
@@ -326,7 +326,7 @@
 			results += TR
 
 		for (var/r in results)
-			var/obj/item/weapon/reagent_containers/food/snacks/R = r
+			var/obj/item/reagent_containers/food/snacks/R = r
 			R.forceMove(C) //Move everything from the buffer back to the container
 			R.cooked |= cook_type
 
@@ -339,7 +339,7 @@
 			modify_cook(i, CI)
 
 	//Final step. Cook function just cooks batter for now.
-	for (var/obj/item/weapon/reagent_containers/food/snacks/S in CI.container)
+	for (var/obj/item/reagent_containers/food/snacks/S in CI.container)
 		S.cook()
 
 /obj/structure/bonfire/fireplace/stove

@@ -40,7 +40,7 @@
 		update_icon()
 		return
 
-	if(istype(W, /obj/item/weapon/material/blacksmith_hammer))
+	if(istype(W, /obj/item/material/blacksmith_hammer))
 
 		if(blacksmithing)
 			return

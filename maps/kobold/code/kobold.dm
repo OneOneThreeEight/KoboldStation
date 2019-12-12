@@ -26,6 +26,16 @@
 
 	command_spawn_enabled = FALSE
 	persist = TRUE
+	
+	ut_environ_exempt_areas = list(/area/mine)
+	ut_apc_exempt_areas = list(/area/mine)
+	ut_atmos_exempt_areas = list(/area)
+	excluded_test_types = list(
+		/datum/unit_test/zas_area_test,
+		/datum/unit_test/foundation/step_shall_return_true_on_success,
+		/datum/unit_test/sql_preferences_columns,
+		/datum/unit_test/bad_piping
+	)
 
 /datum/map/kobold/generate_asteroid()
 	// Create the desert.
